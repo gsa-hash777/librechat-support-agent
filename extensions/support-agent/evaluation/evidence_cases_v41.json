@@ -1,0 +1,427 @@
+{
+  "schema_version": 1,
+  "dataset_id": "business-evidence-policy-v41-small-holdout-16",
+  "frozen_before_comparison": true,
+  "provenance": "New project-authored synthetic holdout written after reviewing V4 findings, before any V4.1 inference. Not external production validation.",
+  "protocol": {
+    "test": 16,
+    "answerable_including_negative": 8,
+    "answerable": 6,
+    "negative": 2,
+    "partial": 2,
+    "exact_missing": 2,
+    "clarify": 4,
+    "source_corpus": "Original business handbook plus 16-article supplement, unchanged.",
+    "first_v4_holdout_preserved": "V4 initial 21/32 is never replaced by this new cohort or by seen regression replay.",
+    "no_test_feedback_tuning": "Run once after V4.1 implementation/configuration freeze; subsequent use must be labeled seen regression.",
+    "scoring": "Use the unchanged V4 source-span/allowed-disposition scorer. Conservative partial abstention is separately counted as lost known evidence."
+  },
+  "source_sha256": {
+    "data\\knowledge.json": "8c09e9b0e8e9fd99633bdaf0bbde31d4308f9f2f845cdb72515e8c8a2c13aaf1",
+    "data\\documents\\knowledge.md": "0c5e4f19d2c6d6a60588e4515fc51604041ccdbb19d71cab6567667e1b8b6458",
+    "data\\documents\\supplement.json": "58954a8ca3408c8615fd898117f76c252d8b7c4136e9917f18af913e702cfe5c",
+    "data\\documents\\support-supplement.md": "c612618c06360f0572d9b0fdb23119030e5af42176ced0d707bf8633186fa954",
+    "data\\documents\\supplement-manifest.json": "004fc2dbe2eb5f8a55e7912bc407ee65d57bfd4b549b0ab9087625f213f2a8d0"
+  },
+  "cases": [
+    {
+      "id": "V41T01",
+      "split": "test",
+      "kind": "answerable",
+      "query": "一个写请求超时以后，重试前应该先查什么？如果我同时改了请求的业务内容，旧的 request_id 还能继续沿用吗？",
+      "evidence": [
+        {
+          "id": "KB-014",
+          "quotes": [
+            "先查询原请求状态，再决定是否重试",
+            "用户修改内容属于新请求，应取消旧草稿后使用新的request_id"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "先查原请求状态；修改业务内容需新request_id并取消旧草稿，属于明确规则询问。",
+      "annotation_basis": "Original business source spans and closed-corpus absence; allowed semantic handling, not an exact answer phrase."
+    },
+    {
+      "id": "V41T02",
+      "split": "test",
+      "kind": "answerable",
+      "query": "同一组织的项目改归另一个团队，对照表确认之后，应由谁先调整归属，又由谁核验资料能否查看及待办责任？",
+      "evidence": [
+        {
+          "id": "KB-019",
+          "quotes": [
+            "由组织管理员核对成员范围并调整归属，再由接收团队核验资料可见性和待办责任"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "管理员调整，接收团队核验；不是缺少对象的泛故障。",
+      "annotation_basis": "Original business source spans and closed-corpus absence; allowed semantic handling, not an exact answer phrase."
+    },
+    {
+      "id": "V41T03",
+      "split": "test",
+      "kind": "answerable",
+      "query": "两个会议看起来占用了同名房间的同一时段，核验重复预约之前需要对照哪些房间和时间信息？",
+      "evidence": [
+        {
+          "id": "KB-024",
+          "quotes": [
+            "先核对会议室编号、所在楼层、开始与结束时间，以及双方使用的时区"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "编号、楼层、起止时间与双方时区。",
+      "annotation_basis": "Original business source spans and closed-corpus absence; allowed semantic handling, not an exact answer phrase."
+    },
+    {
+      "id": "V41T04",
+      "split": "test",
+      "kind": "answerable",
+      "query": "同一笔出差费用由几位员工分摊，各自申报时应说明什么，又应关联到什么业务信息？",
+      "evidence": [
+        {
+          "id": "KB-022",
+          "quotes": [
+            "分别说明分摊依据和本人申报部分，并关联同一业务事项"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "分摊依据、本人申报份额、同一业务事项；不是询问未给出的额度。",
+      "annotation_basis": "Original business source spans and closed-corpus absence; allowed semantic handling, not an exact answer phrase."
+    },
+    {
+      "id": "V41T05",
+      "split": "test",
+      "kind": "answerable",
+      "query": "离线编辑的文字还没同步，而服务端已有其他人的新修改。排查前怎样保护这份文字，随后应怎样处理两边差异？",
+      "evidence": [
+        {
+          "id": "KB-026",
+          "quotes": [
+            "先把未同步文字保存到本人获准使用的位置",
+            "若服务端已经存在其他人的新修改，应按内容冲突流程核对差异，不能直接用离线稿覆盖"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "先保存到获准位置，再按内容冲突核对，不直接覆盖。",
+      "annotation_basis": "Original business source spans and closed-corpus absence; allowed semantic handling, not an exact answer phrase."
+    },
+    {
+      "id": "V41T06",
+      "split": "test",
+      "kind": "answerable",
+      "query": "台账一批记录只有部分行登记失败，后续补交应保留哪些清单？是否可以把整个文件再次登记？",
+      "evidence": [
+        {
+          "id": "KB-027",
+          "quotes": [
+            "部分行失败时保留成功与失败清单，仅在核对结果后补交失败项，避免把全量数据再次登记"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "保留成功/失败清单、核对后只补失败项；完整业务问题无需泛化追问错误码。",
+      "annotation_basis": "Original business source spans and closed-corpus absence; allowed semantic handling, not an exact answer phrase."
+    },
+    {
+      "id": "V41T07",
+      "split": "test",
+      "kind": "negative",
+      "query": "成员的显示名称和团队标签改掉以后，稳定成员编号会跟着变化，并自动获得新团队资料权限吗？",
+      "evidence": [
+        {
+          "id": "KB-030",
+          "quotes": [
+            "更改显示名称或团队标签不会改变稳定的成员编号，也不自动授予新团队的资料访问权限"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "两个自动变化都被原文明确否定。",
+      "annotation_basis": "Original business source spans and closed-corpus absence; allowed semantic handling, not an exact answer phrase."
+    },
+    {
+      "id": "V41T08",
+      "split": "test",
+      "kind": "negative",
+      "query": "报表汇总的数字比我自行相加的小，可以仅凭这个差异认定业务记录已经被删掉吗？",
+      "evidence": [
+        {
+          "id": "KB-028",
+          "quotes": [
+            "看到汇总数字较小，也不能据此认定某些业务记录已经被删除"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "不能仅据差异认定删除，有明确否定证据。",
+      "annotation_basis": "Original business source spans and closed-corpus absence; allowed semantic handling, not an exact answer phrase."
+    },
+    {
+      "id": "V41T09",
+      "split": "test",
+      "kind": "partial",
+      "query": "排查任务提醒没收到时，首先怎样区分任务访问问题和通知渠道问题？邮件提醒的投递日志默认保留多少天？",
+      "evidence": [
+        {
+          "id": "KB-025",
+          "quotes": [
+            "确认问题是任务列表看不到，还是任务已存在但没有邮件或移动提醒",
+            "前者应检查组织和任务访问范围；后者再检查个人通知设置"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates",
+          "coverage": "partial"
+        },
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "邮件投递日志留存",
+          "patterns": [
+            "保留|留存|retention|期限"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "排查分支已知；投递日志留存天数不在资料中。",
+      "annotation_basis": "Original business source spans and closed-corpus absence; allowed semantic handling, not an exact answer phrase."
+    },
+    {
+      "id": "V41T10",
+      "split": "test",
+      "kind": "partial",
+      "query": "原采购审批人休假，提出代理安排时要列出哪三项信息？代理人收到申请后最迟几小时必须审批完？",
+      "evidence": [
+        {
+          "id": "KB-021",
+          "quotes": [
+            "业务负责人应提出代理人、适用申请范围和起止日期"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates",
+          "coverage": "partial"
+        },
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "代理审批完成时限",
+          "patterns": [
+            "审批|完成|时限|duration|小时|保证|guarantee"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "代理人/范围/起止日期已知；授权期限不等于单份申请处理时限。",
+      "annotation_basis": "Original business source spans and closed-corpus absence; allowed semantic handling, not an exact answer phrase."
+    },
+    {
+      "id": "V41T11",
+      "split": "test",
+      "kind": "exact_missing",
+      "query": "一个组织最多允许同时设置多少名组织管理员？",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "组织管理员人数上限",
+          "patterns": [
+            "人数|数量|上限|count_limit|管理员"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "已有角色与权限说明，不代表存在管理员人数上限依据。",
+      "annotation_basis": "Original business source spans and closed-corpus absence; allowed semantic handling, not an exact answer phrase."
+    },
+    {
+      "id": "V41T12",
+      "split": "test",
+      "kind": "exact_missing",
+      "query": "附件误发给外部合作方后，对方必须在多少分钟内删掉已有副本？",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "外部副本删除期限",
+          "patterns": [
+            "删除|副本|时限|duration|分钟|期限"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "资料要求请求对方停止使用并删除，没有强制分钟期限或执行保证。",
+      "annotation_basis": "Original business source spans and closed-corpus absence; allowed semantic handling, not an exact answer phrase."
+    },
+    {
+      "id": "V41T13",
+      "split": "test",
+      "kind": "clarify",
+      "query": "那份东西打不开，能帮我处理吗？",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "clarify"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [
+        [
+          "object",
+          "symptom"
+        ],
+        [
+          "object",
+          "symptom",
+          "operation"
+        ]
+      ],
+      "reference": "缺少明确业务对象和打不开的具体表现，可补问操作；不能擅自猜测权限故障。",
+      "annotation_basis": "Original business source spans and closed-corpus absence; allowed semantic handling, not an exact answer phrase."
+    },
+    {
+      "id": "V41T14",
+      "split": "test",
+      "kind": "clarify",
+      "query": "我准备修改接收人，你看看这样能行吗？",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "clarify"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [
+        [
+          "object"
+        ],
+        [
+          "object",
+          "operation"
+        ]
+      ],
+      "reference": "未说明接收人属于哪种业务以及拟采取的操作，不能直接认定是离职交接或附件外发。",
+      "annotation_basis": "Original business source spans and closed-corpus absence; allowed semantic handling, not an exact answer phrase."
+    },
+    {
+      "id": "V41T15",
+      "split": "test",
+      "kind": "clarify",
+      "query": "这条新出现的状态要不要管？",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "clarify"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [
+        [
+          "object",
+          "symptom"
+        ],
+        [
+          "object"
+        ]
+      ],
+      "reference": "独立问题缺少状态所在功能和具体状态文字，不推断工单状态。",
+      "annotation_basis": "Original business source spans and closed-corpus absence; allowed semantic handling, not an exact answer phrase."
+    },
+    {
+      "id": "V41T16",
+      "split": "test",
+      "kind": "clarify",
+      "query": "我是在多人编辑的文档里遇到麻烦，但没记录提示。",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "clarify"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [
+        [
+          "symptom"
+        ],
+        [
+          "symptom",
+          "operation"
+        ]
+      ],
+      "reference": "协作文档对象已给，需具体表现/提示及可选操作步骤，不额外索取凭据。",
+      "annotation_basis": "Original business source spans and closed-corpus absence; allowed semantic handling, not an exact answer phrase."
+    }
+  ]
+}

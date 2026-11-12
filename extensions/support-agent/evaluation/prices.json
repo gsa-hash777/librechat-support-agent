@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "model": "deepseek-flash",
+  "documented_model_version": "DeepSeek-V4.1-Flash-1017",
+  "checked_at": "2026-11-09",
+  "source": "https://api-docs.deepseek.com/zh-cn/quick_start/pricing/",
+  "currency": "CNY",
+  "off_peak": {"currency": "CNY", "model": "deepseek-flash", "input_per_million": 1.0, "cache_hit_per_million": 0.02, "output_per_million": 4.0},
+  "peak": {"currency": "CNY", "model": "deepseek-flash", "input_per_million": 2.0, "cache_hit_per_million": 0.04, "output_per_million": 8.0},
+  "note": "This snapshot estimates a range across peak/off-peak and unknown cache coverage. It is not a provider invoice. Budget checks use peak rates and assume all input misses cache. Re-verify prices before future runs."
+}

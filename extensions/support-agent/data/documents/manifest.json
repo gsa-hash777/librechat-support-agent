@@ -1,0 +1,174 @@
+{
+  "source": "data/knowledge.json",
+  "source_sha256": "8c09e9b0e8e9fd99633bdaf0bbde31d4308f9f2f845cdb72515e8c8a2c13aaf1",
+  "org_id": "demo",
+  "title": "星桥云办公客服业务知识手册（模拟资料）",
+  "synthetic": true,
+  "business_paragraphs_verbatim": true,
+  "document_count": 16,
+  "handbook_file": "knowledge.md",
+  "handbook_sha256": "0c5e4f19d2c6d6a60588e4515fc51604041ccdbb19d71cab6567667e1b8b6458",
+  "articles": [
+    {
+      "id": "KB-001",
+      "title": "账号登录失败与密码重置",
+      "source": "模拟产品手册 / 账号管理 / 登录与重置",
+      "filename": "articles/KB-001.md",
+      "content_sha256": "472d04637de4187e1eb250e2c929450db06e2a489b5d7ceb3db48d88bfc982b6",
+      "file_sha256": "280114f10e89a024a898b6f297335f134797ac79e019e2a0113d7c360c2b7391",
+      "handbook_content_start": 166,
+      "handbook_content_end": 304
+    },
+    {
+      "id": "KB-002",
+      "title": "SSO 单点登录 SAML 配置排查",
+      "source": "模拟产品手册 / 身份集成 / SAML",
+      "filename": "articles/KB-002.md",
+      "content_sha256": "0606179e4579031b9f93120d5b704f370b018f7ebd87d072a6acc7805c38579f",
+      "file_sha256": "53841f94176d49af7a0491849cbece34e9a209ac79133768e886728d303416c6",
+      "handbook_content_start": 361,
+      "handbook_content_end": 513
+    },
+    {
+      "id": "KB-003",
+      "title": "成员邀请与席位不足",
+      "source": "模拟产品手册 / 组织管理 / 邀请成员",
+      "filename": "articles/KB-003.md",
+      "content_sha256": "024266674b3b8efde6903bff0825118b1179e2508e4017b0bd93227ee04c2f37",
+      "file_sha256": "5799f1cf1e1aa25ba0ecae05ab149335d3363d3bcc7618402ff0eb4463060eef",
+      "handbook_content_start": 561,
+      "handbook_content_end": 676
+    },
+    {
+      "id": "KB-004",
+      "title": "文件上传限制与格式错误",
+      "source": "模拟产品手册 / 文件 / 上传限制",
+      "filename": "articles/KB-004.md",
+      "content_sha256": "edb7eda8871b60956d42f457d7e516f0e87039c8754bb343a4dac291394eda8d",
+      "file_sha256": "b94e73cc7cbca21c55f42b8805ca62b61cb45e5b39e51492fa95f811a53c6d37",
+      "handbook_content_start": 724,
+      "handbook_content_end": 873
+    },
+    {
+      "id": "KB-005",
+      "title": "知识库索引排队与扫描 PDF",
+      "source": "模拟产品手册 / 知识库 / 索引状态",
+      "filename": "articles/KB-005.md",
+      "content_sha256": "fcf87f6a3ffda64d61707e821d42aa24185698c21a9c5fd10119b2e2cb77c2fe",
+      "file_sha256": "18a22caa27f4e7db3fbd98f125b4a3849c644665d74a0e1611e8089ae7735d15",
+      "handbook_content_start": 925,
+      "handbook_content_end": 1057
+    },
+    {
+      "id": "KB-006",
+      "title": "API 请求 429 与限流重试",
+      "source": "模拟开发指南 / API / 限流",
+      "filename": "articles/KB-006.md",
+      "content_sha256": "0bc014efc2267a6c1f98f44c3af4687bf00ee28fb417481fd88309823d5d17f6",
+      "file_sha256": "7def7d3c78ea6c457e9e51e541fbc039679c23e228215549c81d28bd0c01d2f8",
+      "handbook_content_start": 1109,
+      "handbook_content_end": 1237
+    },
+    {
+      "id": "KB-007",
+      "title": "API 401 与密钥轮换",
+      "source": "模拟开发指南 / API / 认证",
+      "filename": "articles/KB-007.md",
+      "content_sha256": "72d1b87ba0d896af92a94797d1a6d0e7aaef35bbfa0cff308fa964b94c21d267",
+      "file_sha256": "3d0f70c2b51b501ed06239bd82c27f34b20f8171214088cd12b041d84a453a48",
+      "handbook_content_start": 1286,
+      "handbook_content_end": 1421
+    },
+    {
+      "id": "KB-008",
+      "title": "工作区 403 与资源访问权限",
+      "source": "模拟产品手册 / 权限 / 资源访问",
+      "filename": "articles/KB-008.md",
+      "content_sha256": "169bc52435fe7b538d4cb3ddb3978be6aa78828db8be044975a2028e31f5cb73",
+      "file_sha256": "397296b36ea4d6c88f34b0f2395cb64ad295bb66915036eb25451fcd7467bb61",
+      "handbook_content_start": 1473,
+      "handbook_content_end": 1609
+    },
+    {
+      "id": "KB-009",
+      "title": "Webhook 回调签名与重复投递",
+      "source": "模拟开发指南 / 事件 / Webhook",
+      "filename": "articles/KB-009.md",
+      "content_sha256": "d3d7fa7d6dd474b587916a49b2bc80bf9a95ab1caaa51efc5798c0a562922d9e",
+      "file_sha256": "51ed34823a054d788e8af47b9b477a6171d3b991a288779f4bf1c438379cd2e8",
+      "handbook_content_start": 1666,
+      "handbook_content_end": 1805
+    },
+    {
+      "id": "KB-010",
+      "title": "账单、发票与订阅变更",
+      "source": "模拟产品手册 / 计费 / 账单与发票",
+      "filename": "articles/KB-010.md",
+      "content_sha256": "527f72546f52d3f9b6c85e0bc5f24a2c6d4e44d9cc24907ad2cea2576c3a3cf2",
+      "file_sha256": "c33583e21c6266e8fcd05760a5020be7eaffa2f3a9db785fa210530bdab720f0",
+      "handbook_content_start": 1853,
+      "handbook_content_end": 1976
+    },
+    {
+      "id": "KB-011",
+      "title": "误删除文件恢复与保留期",
+      "source": "模拟产品手册 / 数据管理 / 回收站",
+      "filename": "articles/KB-011.md",
+      "content_sha256": "c587823d60987187baeb9bcbed8632ce3c5b80a58ee6a3c012e5a1da0cadc173",
+      "file_sha256": "f3f1d123e119bcf023b84e2e3f95a902253ddb54e15dd67a6059f8702da064a1",
+      "handbook_content_start": 2025,
+      "handbook_content_end": 2135
+    },
+    {
+      "id": "KB-012",
+      "title": "工单优先级与响应说明",
+      "source": "模拟服务手册 / 工单 / 优先级",
+      "filename": "articles/KB-012.md",
+      "content_sha256": "c0532795a3bf5935d685e12d7011c3601484b1136b808ba9e00e9738373f3677",
+      "file_sha256": "ad2e53e67d9dcbc20a7dff390eeeb169ddb24fb919e20c5c56534b563fafa52a",
+      "handbook_content_start": 2181,
+      "handbook_content_end": 2327
+    },
+    {
+      "id": "KB-013",
+      "title": "创建工单所需信息与人工确认",
+      "source": "模拟服务手册 / 工单 / 安全提交",
+      "filename": "articles/KB-013.md",
+      "content_sha256": "731a410e3e56f1e8680f93df720be78666a2ec95520380a383633744fca8a19b",
+      "file_sha256": "762dee204da2fd66df4a82e9551c828c0d39e1017f684c311f6e82f742adb4c7",
+      "handbook_content_start": 2377,
+      "handbook_content_end": 2527
+    },
+    {
+      "id": "KB-014",
+      "title": "网络超时、请求重试与幂等",
+      "source": "模拟开发指南 / 可靠性 / 幂等请求",
+      "filename": "articles/KB-014.md",
+      "content_sha256": "b85a904d2d6b9b09b342fea2bea0e742d33a6d06d2b141a88fbe9d3fc53a73e2",
+      "file_sha256": "14260efda32cc9fb2000e1ff203e77e1f7cd3d74effa393d23289605d20ea8a7",
+      "handbook_content_start": 2577,
+      "handbook_content_end": 2720
+    },
+    {
+      "id": "KB-015",
+      "title": "CSV 导出乱码与时区",
+      "source": "模拟产品手册 / 报表 / 导出",
+      "filename": "articles/KB-015.md",
+      "content_sha256": "cbc67ba0fe4c401842f7f0957d1fb058f049c35ca774de54f96ad2133230f16e",
+      "file_sha256": "7e003e5b0235bd65d96fb950765a1c4b73be4da5ae9f81693780ebb2eb9664a4",
+      "handbook_content_start": 2766,
+      "handbook_content_end": 2895
+    },
+    {
+      "id": "KB-016",
+      "title": "状态查询与排障证据收集",
+      "source": "模拟服务手册 / 排障 / 信息收集",
+      "filename": "articles/KB-016.md",
+      "content_sha256": "0af060d0604f452d32ad32e2cd00847ad143e9308cee5b6cee7d4530c57e2384",
+      "file_sha256": "92681c4ee676d8e38929947626b5dbc06178e67c2002d96a43097e594069aad7",
+      "handbook_content_start": 2943,
+      "handbook_content_end": 3076
+    }
+  ],
+  "note": "The combined handbook and articles contain the same source facts. Upload one representation for a chosen corpus; converting format is not new independent knowledge."
+}

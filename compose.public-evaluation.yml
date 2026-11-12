@@ -1,0 +1,33 @@
+# Separate read-only Apache-licensed corpus. No normal knowledge/ticket DB mount.
+services:
+  support-public:
+    image: librechat-support-retrieval:2026-11-10
+    command: [uvicorn, "app.public_api:create_app", --factory, --host, "0.0.0.0", --port, "8092"]
+    environment:
+      PUBLIC_CONFIG_PATH: /run/secrets/public.json
+      PUBLIC_DATA_PATH: /data/public-benchmark/mtrag
+      PUBLIC_MODELS_PATH: /data/public-models
+      PUBLIC_SOURCE_INDEX: /sources/index
+      PUBLIC_SOURCE_MODELS: /sources/models
+      PUBLIC_THREADS: "2"
+      OPENBLAS_NUM_THREADS: "1"
+      # One inference owner thread plus bounded glibc arenas prevents retained
+      # allocations growing with ASGI worker threads during long benchmark runs.
+      MALLOC_ARENA_MAX: "2"
+      MALLOC_TRIM_THRESHOLD_: "131072"
+    volumes:
+      - ./extensions/support-agent/app:/app/app:ro
+      - ./.local/public-benchmark/mtrag/index:/sources/index:ro
+      - ./.local/public-benchmark/config.json:/run/secrets/public.json:ro
+      - ./.local/models/public-retrieval:/sources/models:ro
+      - public-retrieval-cache:/data
+    ports:
+      - "127.0.0.1:8192:8092"
+    mem_limit: 1024m
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8092/health', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+volumes:
+  public-retrieval-cache:

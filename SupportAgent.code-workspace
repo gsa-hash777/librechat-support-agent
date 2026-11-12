@@ -1,0 +1,315 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+    "python.testing.pytestEnabled": true,
+    "python.testing.cwd": "${workspaceFolder}/extensions/support-agent",
+    "python.testing.pytestArgs": [
+      "tests"
+    ],
+    "files.exclude": {
+      "**/__pycache__": true,
+      ".venv": true
+    },
+    "search.exclude": {
+      ".venv": true,
+      ".local": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "ms-python.debugpy"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Support Agent: attach to running Docker service",
+        "type": "debugpy",
+        "request": "attach",
+        "connect": {
+          "host": "127.0.0.1",
+          "port": 5678
+        },
+        "pathMappings": [
+          {
+            "localRoot": "${workspaceFolder}/extensions/support-agent",
+            "remoteRoot": "/app"
+          }
+        ],
+        "justMyCode": true
+      }
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Support: OperationsStart (OAuth + TLS, no model calls)",
+        "detail": "Start per-user OAuth deployment, preserving optional retrieval models. First use may show the Windows local-certificate trust prompt; no paid model calls.",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "OperationsStart"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: StartDebug (OAuth + TLS + VS Code attach, no model calls)",
+        "detail": "Run normal OAuth/TLS startup once, then enable support-agent reload/debugpy on 127.0.0.1:5678. Use the existing VS Code attach configuration; no paid model calls.",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "StartDebug"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: OpenApps (system browser, no model calls)",
+        "detail": "Open LibreChat and the HTTPS service desk in the default system browser. Keep login, OAuth authorization and callback in that same browser profile; no paid model calls.",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "OpenApps"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Backup (online, no model calls)",
+        "detail": "Create a local sensitive-data backup with manifest hashes. Keeps services running; no paid model calls.",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "Backup"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Monitor (health + metrics + backup age, no model calls)",
+        "detail": "Read service readiness, authenticated metrics, backup age and Docker resource use. No paid model calls.",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "Monitor"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: MultiUser (account setup + Agent access check, no model calls)",
+        "detail": "Provision separate local LibreChat accounts, grant private Agent viewer access and verify access. Each account still explicitly connects its service-desk identity; no paid model calls.",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "MultiUser"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Public: 1 Prepare IBM Cloud data",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "PreparePublicData"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Public: 2 Prepare CPU retrieval models",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "PreparePublicModels"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Public: 3 Build full corpus index (resumable)",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "BuildPublicIndex"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Public: 4 Start public knowledge service",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "StartPublic"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Public: 5 Set up public Agents (no model calls)",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "SetupPublicAgent"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Public: 6 Agent dry run (8 dev tasks, no model calls)",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "PublicAgentDryRun"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Public: Stop public service (preserve indexes)",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "StopPublic"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Evidence policy development (16 cases)",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "EvidenceDev"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Evidence policy regression (32 fixed cases)",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "EvidenceRegression"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Prepare CPU retrieval models",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "PrepareRetrieval"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Start with hybrid retrieval options",
+        "detail": "Includes per-user OAuth and local HTTPS; requires prepared retrieval models. No paid model calls.",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "StartRetrieval"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Retrieval comparison (12 dev cases)",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "RetrievalDev"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Retrieval regression (24 fixed test cases)",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "RetrievalRegression"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Knowledge comparison (no model)",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "KnowledgeEvaluate"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Prepare isolated evaluation",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "PrepareEval"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Agent smoke (3 paid tasks)",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "AgentSmoke"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Agent baseline (100 paid tasks)",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "AgentBaseline"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Agent repair regression (32 paid tasks)",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "AgentRepair"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Agent follow-up regression (15 paid tasks)",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "AgentFollowup"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Verify focused fixes (5 paid tasks)",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "AgentVerify"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Stop evaluation service",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": ["${workspaceFolder}/extensions/support-agent/scripts/project.py", "StopEval"],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Setup",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": [
+          "${workspaceFolder}/extensions/support-agent/scripts/project.py",
+          "Setup"
+        ],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Start",
+        "detail": "Starts the OAuth/TLS operations deployment; automatically includes existing retrieval models. No paid model calls.",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": [
+          "${workspaceFolder}/extensions/support-agent/scripts/project.py",
+          "Start"
+        ],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Stop",
+        "detail": "Stops the business app, support TLS and MongoDB; leaves the separate public knowledge service unchanged.",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": [
+          "${workspaceFolder}/extensions/support-agent/scripts/project.py",
+          "Stop"
+        ],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Test",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": [
+          "${workspaceFolder}/extensions/support-agent/scripts/project.py",
+          "Test"
+        ],
+        "group": "test",
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Evaluate",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": [
+          "${workspaceFolder}/extensions/support-agent/scripts/project.py",
+          "Evaluate"
+        ],
+        "problemMatcher": []
+      },
+      {
+        "label": "Support: Bootstrap per-user OAuth agent (no model calls)",
+        "detail": "Requires the operations deployment; migrates the Agent Action to per-user OAuth without calling a model.",
+        "type": "process",
+        "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+        "args": [
+          "${workspaceFolder}/extensions/support-agent/scripts/project.py",
+          "Bootstrap"
+        ],
+        "problemMatcher": []
+      }
+    ]
+  }
+}

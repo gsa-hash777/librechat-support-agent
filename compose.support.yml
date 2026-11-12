@@ -1,0 +1,75 @@
+name: librechat-support
+services:
+  api:
+    image: ${LIBRECHAT_IMAGE:-librechat-support-ui:2026-11-09}
+    build:
+      context: ./extensions/support-agent/deploy
+      dockerfile: LibreChat.Dockerfile
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3080:3080"
+    env_file: .env
+    environment:
+      HOST: 0.0.0.0
+      MONGO_URI: mongodb://mongodb:27017/LibreChat
+      SEARCH: "false"
+      CONFIG_PATH: /app/support.config.yaml
+      NODE_OPTIONS: --max-old-space-size=1280
+    volumes:
+      - ./extensions/support-agent/deploy/config.yaml:/app/support.config.yaml:ro
+      - librechat-uploads:/app/uploads
+      - librechat-logs:/app/logs
+      - librechat-runtime:/app/data
+    depends_on:
+      mongodb:
+        condition: service_healthy
+      support-agent:
+        condition: service_healthy
+    mem_limit: 1792m
+    healthcheck:
+      test: [CMD, node, -e, "fetch('http://127.0.0.1:3080/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 15s
+      timeout: 8s
+      retries: 12
+      start_period: 40s
+  mongodb:
+    image: mongo:8.0.20
+    restart: unless-stopped
+    command: [mongod, --bind_ip_all, --wiredTigerCacheSizeGB, "0.25"]
+    volumes:
+      - mongodb-data:/data/db
+    healthcheck:
+      test: [CMD, mongosh, --quiet, --eval, "db.adminCommand('ping').ok"]
+      interval: 15s
+      timeout: 8s
+      retries: 10
+    mem_limit: 768m
+  support-agent:
+    build: ./extensions/support-agent
+    restart: unless-stopped
+    command: [python, -m, debugpy, --listen, "0.0.0.0:5678", -m, uvicorn, "app.main:create_app", --factory, --host, "0.0.0.0", --port, "8090", --reload, --reload-dir, /app/app]
+    environment:
+      SUPPORT_CONFIG_PATH: /run/secrets/users.json
+      SUPPORT_DB_PATH: /data/support.db
+      SUPPORT_PUBLIC_BASE_URL: http://localhost:8090
+      SUPPORT_TOOL_BASE_URL: http://support-agent:8090
+    volumes:
+      - ./extensions/support-agent/app:/app/app:ro
+      - ./extensions/support-agent/data:/app/data:ro
+      - ./.local/users.json:/run/secrets/users.json:ro
+      - support-data:/data
+    ports:
+      - "127.0.0.1:8090:8090"
+      - "127.0.0.1:5678:5678"
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8090/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    mem_limit: 384m
+volumes:
+  mongodb-data:
+  librechat-uploads:
+  librechat-logs:
+  librechat-runtime:
+  support-data:

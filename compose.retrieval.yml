@@ -1,0 +1,17 @@
+# Optional CPU models; standard compose.support.yml remains lexical-only.
+services:
+  support-agent:
+    image: librechat-support-retrieval:2026-11-10
+    build:
+      context: ./extensions/support-agent
+      args:
+        SUPPORT_HYBRID: "true"
+    environment:
+      SUPPORT_RETRIEVAL_ENABLED: "true"
+      SUPPORT_RETRIEVAL_MODE: ${SUPPORT_RETRIEVAL_MODE:-lexical}
+      SUPPORT_MODELS_PATH: /models
+      SUPPORT_VECTOR_CACHE_PATH: /data/retrieval-vectors
+      SUPPORT_RETRIEVAL_THREADS: "2"
+    volumes:
+      - ./.local/models/support-retrieval:/models:ro
+    mem_limit: 768m

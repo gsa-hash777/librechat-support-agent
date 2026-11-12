@@ -1,0 +1,72 @@
+version: 1.3.18
+cache: true
+interface:
+  customWelcome: "企业工单助手 · 基于 LibreChat 的二次开发"
+  agents:
+    use: true
+    create: true
+    share: true
+    public: false
+  webSearch: false
+  fileSearch: false
+fileConfig:
+  endpoints:
+    agents:
+      disabled: true
+    DeepSeek:
+      disabled: true
+    default:
+      disabled: true
+endpoints:
+  agents:
+    recursionLimit: 12
+    maxRecursionLimit: 20
+    capabilities: [actions, tools]
+  custom:
+    - name: DeepSeek
+      apiKey: "${DEEPSEEK_API_KEY}"
+      baseURL: https://api.deepseek.com/v1
+      models:
+        default: [deepseek-flash, deepseek-v4-pro]
+        fetch: false
+      titleConvo: false
+      modelDisplayLabel: DeepSeek
+      addParams:
+        thinking:
+          type: disabled
+    - name: DeepSeekPublicEval
+      apiKey: "${DEEPSEEK_API_KEY}"
+      baseURL: https://api.deepseek.com/v1
+      models:
+        default: [deepseek-flash]
+        fetch: false
+      titleConvo: false
+      modelDisplayLabel: DeepSeek Public Evaluation
+      addParams:
+        maxRetries: 0
+        thinking:
+          type: disabled
+    - name: DeepSeekTaskEval
+      apiKey: "${DEEPSEEK_API_KEY}"
+      baseURL: http://support-eval-proxy:8093/v1
+      models:
+        default: [deepseek-flash]
+        fetch: false
+      titleConvo: false
+      modelDisplayLabel: DeepSeek Task Evaluation (budget guarded)
+      addParams:
+        maxRetries: 0
+        thinking:
+          type: disabled
+actions:
+  allowedDomains:
+    - 'support-tls'
+    - support-agent
+    - support-eval
+    - support-public
+  allowedAddresses:
+    - 'localhost:8443'
+    - 'support-tls:8443'
+    - support-agent:8090
+    - support-eval:8090
+    - support-public:8092

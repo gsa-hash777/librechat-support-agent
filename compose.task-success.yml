@@ -1,0 +1,22 @@
+# Request-level spending guard used only by the isolated TSR experiment.
+services:
+  support-eval-proxy:
+    profiles: [evaluation]
+    image: librechat-support-support-eval
+    command: [python, -m, evaluation.task_success_proxy]
+    env_file: .env
+    environment:
+      TSR_BUDGET_PATH: /state/budget.json
+      PYTHONDONTWRITEBYTECODE: "1"
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - ./extensions/support-agent/evaluation:/app/evaluation:ro
+      - ./.local/task-success-v1:/state
+    ports:
+      - "127.0.0.1:8093:8093"
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8093/health', timeout=3)"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    mem_limit: 128m

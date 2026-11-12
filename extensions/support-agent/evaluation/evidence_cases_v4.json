@@ -1,0 +1,1267 @@
+{
+  "schema_version": 1,
+  "dataset_id": "business-evidence-policy-v4-48",
+  "frozen_before_comparison": true,
+  "provenance": "Project-authored synthetic Chinese business cases, frozen before implementation results; not external independent production tasks.",
+  "protocol": {
+    "dev": 16,
+    "test": 32,
+    "corpus": "original business handbook plus supplement; no duplicate seed documents or engineering feature descriptions",
+    "allowed_disposition_set": "Multiple safe dispositions may be accepted. Conservative partial abstention is allowed but separately counted as lost known evidence/overrefusal.",
+    "evidence_standard": "Complete original-source quote spans in verified returned chunks; answer text need not reproduce a standard phrase.",
+    "negative_standard": "An explicit denial in the source can support an answer; negative wording is not automatically unanswerable.",
+    "missing_standard": "Named semantic information needs, not arbitrary exact wording; related topic text or unrelated numbers do not establish a precise missing fact.",
+    "clarification_standard": "Field sets object/symptom/operation plus semantic question consistency; no requests for secrets.",
+    "test_policy": "Run once only after source/model/configuration freeze; no subsequent tuning against this split."
+  },
+  "source_sha256": {
+    "data\\knowledge.json": "8c09e9b0e8e9fd99633bdaf0bbde31d4308f9f2f845cdb72515e8c8a2c13aaf1",
+    "data\\documents\\knowledge.md": "0c5e4f19d2c6d6a60588e4515fc51604041ccdbb19d71cab6567667e1b8b6458",
+    "data\\documents\\supplement.json": "58954a8ca3408c8615fd898117f76c252d8b7c4136e9917f18af913e702cfe5c",
+    "data\\documents\\support-supplement.md": "c612618c06360f0572d9b0fdb23119030e5af42176ced0d707bf8633186fa954",
+    "data\\documents\\supplement-manifest.json": "004fc2dbe2eb5f8a55e7912bc407ee65d57bfd4b549b0ab9087625f213f2a8d0"
+  },
+  "cases": [
+    {
+      "id": "ED01",
+      "split": "dev",
+      "kind": "answerable",
+      "query": "员工离职交接清单按项目要写哪些人和位置？最晚应提前多久启动核对？",
+      "evidence": [
+        {
+          "id": "KB-017",
+          "quotes": [
+            "清单按项目记录原负责人、接收人和资料所在位置",
+            "在最后工作日前至少2个工作日发起清单核对"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "原/新负责人及位置；至少提前2个工作日是准备要求，不是客服SLA。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ED02",
+      "split": "dev",
+      "kind": "answerable",
+      "query": "外部协作者的单次资料审阅授权最长多少天，提交续期申请就能恢复过期访问吗？",
+      "evidence": [
+        {
+          "id": "KB-018",
+          "quotes": [
+            "单次外部审阅授权最长7个自然日",
+            "提交续期申请本身不会使过期访问恢复"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "7个自然日；申请本身不会恢复权限。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ED03",
+      "split": "dev",
+      "kind": "answerable",
+      "query": "两个人修改同一段文字产生冲突，需要比较哪三份内容？业务数值不一致由谁核实？",
+      "evidence": [
+        {
+          "id": "KB-020",
+          "quotes": [
+            "资料负责人比较共同起点、甲方修改和乙方修改这3份内容",
+            "同一数值、结论或适用条件发生冲突时，应向业务负责人核实"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "共同起点及双方修改；业务负责人核实。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ED04",
+      "split": "dev",
+      "kind": "answerable",
+      "query": "任务提醒默认的免打扰时间是什么？时区和用户改过的设置应以哪一项为准？",
+      "evidence": [
+        {
+          "id": "KB-025",
+          "quotes": [
+            "每日22时至次日8时",
+            "使用成员个人设置的时区",
+            "成员修改过窗口时应以当前设置为准"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "22时至次日8时；个人时区和当前设置。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ED05",
+      "split": "dev",
+      "kind": "answerable",
+      "query": "给同名成员分配任务前至少核对哪两项身份信息？把附件发给合作方前又由谁共同复核？",
+      "evidence": [
+        {
+          "id": "KB-030",
+          "quotes": [
+            "至少核对成员编号与所属团队这2项信息"
+          ]
+        },
+        {
+          "id": "KB-031",
+          "quotes": [
+            "由制作人和另一名复核人共同核对接收对象、文件版本及脱敏结果"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "成员编号与团队；制作人和另一名复核人。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ED06",
+      "split": "dev",
+      "kind": "exact_missing",
+      "query": "差旅报销每人单次最高可以报多少钱？",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "报销额度",
+          "patterns": [
+            "金额|额度|价格|pricing"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "补充资料提供核对流程，未给报销额度。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ED07",
+      "split": "dev",
+      "kind": "exact_missing",
+      "query": "项目汇总报表的固定刷新间隔具体是多少分钟？",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "报表刷新间隔",
+          "patterns": [
+            "刷新|间隔|duration|时限"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "资料没有统一刷新间隔，不能从其他分钟数挪用。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ED08",
+      "split": "dev",
+      "kind": "exact_missing",
+      "query": "外部协作者到期前的自动提醒从哪个联系邮箱发送？",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "联系邮箱",
+          "patterns": [
+            "邮箱|contact|渠道"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "授权期限不证明有自动提醒，更没有发件邮箱。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ED09",
+      "split": "dev",
+      "kind": "negative",
+      "query": "离职交接尚未完成，可以继续保留已到停用时间的离职人员访问权限吗？",
+      "evidence": [
+        {
+          "id": "KB-017",
+          "quotes": [
+            "不能因为交接尚未完成而继续保留离职人员访问权限",
+            "管理员应先停用账号"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "明确不允许继续保留访问；否定答案有原文依据。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ED10",
+      "split": "dev",
+      "kind": "negative",
+      "query": "这次附件对外提交已经通过审阅，合作方是否因此自动获得再次转发权限？",
+      "evidence": [
+        {
+          "id": "KB-031",
+          "quotes": [
+            "外发结果只针对本次用途和接收方，不自动允许对方再次转发"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "明确不会自动授权再次转发，不属于无答案。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ED11",
+      "split": "dev",
+      "kind": "partial",
+      "query": "外部资料审阅单次最长几天？管理员处理续期申请最长要几小时？",
+      "evidence": [
+        {
+          "id": "KB-018",
+          "quotes": [
+            "单次外部审阅授权最长7个自然日"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates",
+          "coverage": "partial"
+        },
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "续期处理时限",
+          "patterns": [
+            "续期|处理|时限|duration|小时"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "授权期限可答；处理续期的小时SLA未知。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ED12",
+      "split": "dev",
+      "kind": "partial",
+      "query": "办公设备验收清单由哪两个角色核对？发现少件后统一赔偿多少钱？",
+      "evidence": [
+        {
+          "id": "KB-023",
+          "quotes": [
+            "至少由收货经办人和资产保管人2个角色核对"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates",
+          "coverage": "partial"
+        },
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "赔偿金额",
+          "patterns": [
+            "赔偿|金额|价格|pricing"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "两角色已知；统一赔偿金额未规定。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ED13",
+      "split": "dev",
+      "kind": "partial",
+      "query": "项目汇总的已完成事项数按哪一天归属统计周期？最大台账规模是多少条？",
+      "evidence": [
+        {
+          "id": "KB-028",
+          "quotes": [
+            "已完成事项数按完成日期归属统计周期"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates",
+          "coverage": "partial"
+        },
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "最大台账规模",
+          "patterns": [
+            "规模|条数|数量|上限|count_limit"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "完成日期可答；最大台账规模未定义。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ED14",
+      "split": "dev",
+      "kind": "clarify",
+      "query": "又出问题了，请帮我看看。",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "clarify"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [
+        [
+          "object",
+          "symptom"
+        ],
+        [
+          "object",
+          "symptom",
+          "operation"
+        ]
+      ],
+      "reference": "没有业务对象和具体现象；可以同时询问操作。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ED15",
+      "split": "dev",
+      "kind": "clarify",
+      "query": "批量登记不成功。",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "clarify"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [
+        [
+          "symptom"
+        ],
+        [
+          "symptom",
+          "operation"
+        ]
+      ],
+      "reference": "批量登记对象明确，需具体提示/现象，可以问发生步骤，不需重问产品对象。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ED16",
+      "split": "dev",
+      "kind": "clarify",
+      "query": "项目归档页面有报错，但我没说错误内容和当时的操作。",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "clarify"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [
+        [
+          "symptom",
+          "operation"
+        ]
+      ],
+      "reference": "明确缺报错内容和操作，不要求密码、凭据或完整业务正文。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET01",
+      "split": "test",
+      "kind": "answerable",
+      "query": "两个团队合并时，项目对照表至少记哪三类信息？还没验证试点可以批量改其他项目吗？",
+      "evidence": [
+        {
+          "id": "KB-019",
+          "quotes": [
+            "每个项目至少记录现负责人、拟接收负责人和当前访问成员三项信息",
+            "试点核对没有完成前，不应整批变更其余项目"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "三类项目责任/成员信息；先完成试点再批量调整。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET02",
+      "split": "test",
+      "kind": "answerable",
+      "query": "采购申请的原审批人休假，代理授权最长可以安排多少工作日？代理人恰好是该事项申请人时怎么办？",
+      "evidence": [
+        {
+          "id": "KB-021",
+          "quotes": [
+            "代理期限最长10个工作日",
+            "代理人不得审批自己作为申请人提交的事项",
+            "交由业务负责人重新指定有资格的审批人"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "最长10个工作日；不得自审，应重新指定。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET03",
+      "split": "test",
+      "kind": "answerable",
+      "query": "差旅返程后的材料核对在几天内提交？这能代表届时一定收到报销款吗？",
+      "evidence": [
+        {
+          "id": "KB-022",
+          "quotes": [
+            "返程后5个工作日内提交材料核对",
+            "这一期限不是付款承诺"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "5个工作日；不是付款保证。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET04",
+      "split": "test",
+      "kind": "answerable",
+      "query": "一批办公设备还没全部送齐，验收单怎样登记已到和未到的数量？设备异常时可以先登记为可领用吗？",
+      "evidence": [
+        {
+          "id": "KB-023",
+          "quotes": [
+            "每批记录实到数量、缺件情况和已验收数量",
+            "剩余数量继续保持待交付状态",
+            "异常设备不应直接登记为可领用资产"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "按批记录实到/缺件/验收，剩余待交付，异常不算可领用。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET05",
+      "split": "test",
+      "kind": "answerable",
+      "query": "会议室一次能预约多长时间？开始十分钟还没见人，参会者能直接宣布房间释放吗？",
+      "evidence": [
+        {
+          "id": "KB-024",
+          "quotes": [
+            "单次会议室预约最长2小时",
+            "管理员联系组织者并现场确认未使用后，才可取消该次房间占用",
+            "参会者不能仅凭门外暂时无人就自行认定房间已释放"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "最长2小时；需管理员联系并现场核实，参会者不能自判释放。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET06",
+      "split": "test",
+      "kind": "answerable",
+      "query": "手机恢复联网后准备同步离线草稿，先用几份非关键草稿验证？没核对完能清除客户端数据吗？",
+      "evidence": [
+        {
+          "id": "KB-026",
+          "quotes": [
+            "先处理1份非关键草稿",
+            "不应清除应用数据、退出并删除本地缓存或卸载客户端"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "先1份试点，核对前不清除数据。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET07",
+      "split": "test",
+      "kind": "answerable",
+      "query": "第一次批量登记台账，映射验证先试多少条？校验报告显示通过就说明已写入了吗？",
+      "evidence": [
+        {
+          "id": "KB-027",
+          "quotes": [
+            "先用不超过20条记录核对映射",
+            "校验报告中的通过只表示该行符合登记条件，不代表数据已经写入"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "不超过20条是映射试验；通过不等于已提交。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET08",
+      "split": "test",
+      "kind": "answerable",
+      "query": "项目报表里新增事项和已完成事项分别按什么日期算？空白格能当作零处理吗？",
+      "evidence": [
+        {
+          "id": "KB-028",
+          "quotes": [
+            "已完成事项数按完成日期归属统计周期，新增事项数按创建日期归属统计周期",
+            "空白单元格表示该项未形成统计值，不能直接按零解释"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "创建/完成日期分别对应；空白不代表零。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET09",
+      "split": "test",
+      "kind": "answerable",
+      "query": "复用归档项目的业务模板时需要重新填写哪些字段，旧项目的审批结果会自动带过去吗？",
+      "evidence": [
+        {
+          "id": "KB-029",
+          "quotes": [
+            "重新填写项目名称、负责人、起止日期及成员范围",
+            "不自动复制原项目成员权限、审批结果和已完成状态"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "重新填写四类信息，不复制审批结果/权限/完成态。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET10",
+      "split": "test",
+      "kind": "answerable",
+      "query": "收集现场设备照片建议长边至少多少像素？整体图和近照怎样安排，并且提供给客服前要避开什么内容？",
+      "evidence": [
+        {
+          "id": "KB-032",
+          "quotes": [
+            "照片长边至少1200像素",
+            "先拍一张包含设备与环境关系的整体照片，再补拍能看清问题位置的近照",
+            "避开无关人员、客户资料和可见凭据"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "1200像素只是建议；整体加近照，避开隐私与凭据。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET11",
+      "split": "test",
+      "kind": "exact_missing",
+      "query": "团队归属调整每个项目收取多少钱？",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "项目调整费用",
+          "patterns": [
+            "费用|价格|金额|pricing"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "项目试点和归属流程没有价格。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET12",
+      "split": "test",
+      "kind": "exact_missing",
+      "query": "协作文档的历史修改默认保留多少个月？",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "修改记录保留时长",
+          "patterns": [
+            "保留|留存|retention|期限"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "冲突比较流程及不能保证找回全部历史，不提供留存月数。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET13",
+      "split": "test",
+      "kind": "exact_missing",
+      "query": "代理审批的电子签名采用哪种加密算法？",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "签名算法",
+          "patterns": [
+            "算法|algorithm|加密"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "代理授权规则没有电子签名算法，不能借用登录证书信息。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET14",
+      "split": "test",
+      "kind": "exact_missing",
+      "query": "台账批量登记一次最多提交多少条正式记录？",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "正式批量上限",
+          "patterns": [
+            "条数|上限|数量|count_limit|最大"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "20条仅是首次映射验证建议，不是正式提交上限。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET15",
+      "split": "test",
+      "kind": "exact_missing",
+      "query": "经过脱敏的交付副本默认保存在哪座城市的数据中心？",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "存储城市",
+          "patterns": [
+            "城市|地区|位置|存储|storage_location"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "外发审阅规范不说明数据中心城市。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET16",
+      "split": "test",
+      "kind": "exact_missing",
+      "query": "现场设备维修的客服电话是多少？",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "维修联系电话",
+          "patterns": [
+            "电话|热线|contact|渠道"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "照片采集规范没有维修联系电话。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET17",
+      "split": "test",
+      "kind": "negative",
+      "query": "外部协作者访问到期后，是不是能据此证明他之前下载的文件副本都已删除？",
+      "evidence": [
+        {
+          "id": "KB-018",
+          "quotes": [
+            "访问到期会终止后续的受控查看，但不能证明对方此前保存的文件副本已经被删除"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "不能证明此前副本已删除，明确否定可安全回答。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET18",
+      "split": "test",
+      "kind": "negative",
+      "query": "多人编辑的两个数值冲突时，最后提交的一版是不是一定正确？",
+      "evidence": [
+        {
+          "id": "KB-020",
+          "quotes": [
+            "不能把最新提交时间作为内容一定正确的证据"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "最新提交不证明正确，无需假定没有答案。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET19",
+      "split": "test",
+      "kind": "negative",
+      "query": "会议室管理员取消了房间预约，参会者的日历会议和视频会议是否也同步取消？",
+      "evidence": [
+        {
+          "id": "KB-024",
+          "quotes": [
+            "取消房间预约不等于取消日历会议或视频会议"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "不等同；组织者需另外通知。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET20",
+      "split": "test",
+      "kind": "negative",
+      "query": "把项目归档，能作为业务历史记录已经清除的证明吗？",
+      "evidence": [
+        {
+          "id": "KB-029",
+          "quotes": [
+            "归档不等于删除，不能把归档操作当作清除历史记录的证明"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [],
+      "reference": "不能；归档与删除不同。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET21",
+      "split": "test",
+      "kind": "partial",
+      "query": "离职资料清单应至少提前几个工作日核对？客服接到资料接管请求后保证多久办完？",
+      "evidence": [
+        {
+          "id": "KB-017",
+          "quotes": [
+            "在最后工作日前至少2个工作日发起清单核对"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates",
+          "coverage": "partial"
+        },
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "接管处理承诺",
+          "patterns": [
+            "接管|处理|保证|承诺|duration|guarantee|时限"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "准备期限2个工作日已知；客服处理完成保证未知。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET22",
+      "split": "test",
+      "kind": "partial",
+      "query": "代理审批最长授权多少工作日？金额低于多少钱的采购申请可以免审批？",
+      "evidence": [
+        {
+          "id": "KB-021",
+          "quotes": [
+            "代理期限最长10个工作日"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates",
+          "coverage": "partial"
+        },
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "免审批金额门槛",
+          "patterns": [
+            "金额|价格|门槛|pricing"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "代理期限可答；免审批金额未规定。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET23",
+      "split": "test",
+      "kind": "partial",
+      "query": "会议室单次预约最长几小时？迟到未使用会自动扣多少钱？",
+      "evidence": [
+        {
+          "id": "KB-024",
+          "quotes": [
+            "单次会议室预约最长2小时"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates",
+          "coverage": "partial"
+        },
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "迟到扣费",
+          "patterns": [
+            "扣费|费用|金额|pricing"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "2小时已知；扣费规则/金额未提供。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET24",
+      "split": "test",
+      "kind": "partial",
+      "query": "任务通知的默认免打扰窗口是什么？通知保证在多少秒内送达？",
+      "evidence": [
+        {
+          "id": "KB-025",
+          "quotes": [
+            "每日22时至次日8时"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates",
+          "coverage": "partial"
+        },
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "通知送达保证",
+          "patterns": [
+            "通知|送达|发送|延迟|guarantee|duration|秒|时限"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "默认窗口已知；没有通知必达/固定延迟承诺。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET25",
+      "split": "test",
+      "kind": "partial",
+      "query": "重新联网时先用几份离线草稿做同步试验？本地离线草稿默认保留多少天？",
+      "evidence": [
+        {
+          "id": "KB-026",
+          "quotes": [
+            "先处理1份非关键草稿"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates",
+          "coverage": "partial"
+        },
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "离线草稿留存",
+          "patterns": [
+            "保留|留存|retention|天数|期限"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "先1份试验；没有默认保留天数。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET26",
+      "split": "test",
+      "kind": "partial",
+      "query": "设备问题照片建议长边至少多少像素？自动识别每种报错的准确率是多少百分比？",
+      "evidence": [
+        {
+          "id": "KB-032",
+          "quotes": [
+            "照片长边至少1200像素"
+          ]
+        }
+      ],
+      "allowed_dispositions": [
+        {
+          "status": "candidates",
+          "coverage": "partial"
+        },
+        {
+          "status": "insufficient"
+        }
+      ],
+      "missing_needs": [
+        {
+          "name": "识别准确率",
+          "patterns": [
+            "准确|百分|可用|availability|识别"
+          ]
+        }
+      ],
+      "allowed_missing_field_sets": [],
+      "reference": "1200像素已知；自动识别全部错误及准确率未被证明。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET27",
+      "split": "test",
+      "kind": "clarify",
+      "query": "材料发出去以后就那样了，要怎么继续？",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "clarify"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [
+        [
+          "object",
+          "symptom"
+        ],
+        [
+          "object",
+          "symptom",
+          "operation"
+        ]
+      ],
+      "reference": "未明确哪类材料/业务功能及发生了什么；不要直接假设已误发。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET28",
+      "split": "test",
+      "kind": "clarify",
+      "query": "我这边还是不对，给个处理办法。",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "clarify"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [
+        [
+          "object",
+          "symptom"
+        ],
+        [
+          "object",
+          "symptom",
+          "operation"
+        ]
+      ],
+      "reference": "没有对象和具体现象，可以补问此前操作。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET29",
+      "split": "test",
+      "kind": "clarify",
+      "query": "审批这块想请你帮一下。",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "clarify"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [
+        [
+          "symptom"
+        ],
+        [
+          "symptom",
+          "operation"
+        ]
+      ],
+      "reference": "业务功能已是审批，需具体诉求/现象及可选操作步骤。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET30",
+      "split": "test",
+      "kind": "clarify",
+      "query": "项目报表看着不对，但我不知道怎么说。",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "clarify"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [
+        [
+          "symptom"
+        ],
+        [
+          "symptom",
+          "operation"
+        ]
+      ],
+      "reference": "报表对象已给，需具体差异/提示或操作，不索取完整业务数据。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET31",
+      "split": "test",
+      "kind": "clarify",
+      "query": "任务通知能帮我看看吗？",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "clarify"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [
+        [
+          "symptom"
+        ],
+        [
+          "symptom",
+          "operation"
+        ]
+      ],
+      "reference": "任务通知已明确，但不知道是未收到、延迟还是设置问题。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    },
+    {
+      "id": "ET32",
+      "split": "test",
+      "kind": "clarify",
+      "query": "刚才那个数字是什么意思？",
+      "evidence": [],
+      "allowed_dispositions": [
+        {
+          "status": "clarify"
+        }
+      ],
+      "missing_needs": [],
+      "allowed_missing_field_sets": [
+        [
+          "object"
+        ],
+        [
+          "object",
+          "symptom"
+        ]
+      ],
+      "reference": "没有前文，需数值所在功能/页面和具体显示内容，不臆测金额或业务指标。",
+      "annotation_basis": "Verified source text plus closed-corpus absence; no generated model answer or exact answer phrase is the target."
+    }
+  ]
+}

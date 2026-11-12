@@ -1,264 +1,113 @@
-<p align="center">
-  <a href="https://librechat.ai">
-    <img src="client/public/assets/logo.svg" height="256">
-  </a>
-  <h1 align="center">
-    <a href="https://librechat.ai">LibreChat</a>
-  </h1>
-</p>
+# 企业服务台 Agent：知识问答与工单协同
 
-<p align="center">
-  <strong>English</strong> ·
-  <a href="README.zh.md">中文</a>
-</p>
+基于 [LibreChat](https://github.com/LibreChat-AI/LibreChat) 的业务扩展，面向 IT 服务台实现可追溯知识问答、工单处理、个人授权和评测运维。本项目复用 LibreChat 的聊天界面、Agent 执行循环与 Actions，自行实现独立的 Python 业务服务；不将上游框架功能计为原创成果。
 
-<p align="center">
-  <a href="https://discord.librechat.ai"> 
-    <img
-      src="https://img.shields.io/discord/1086345563026489514?label=&logo=discord&style=for-the-badge&logoWidth=20&logoColor=white&labelColor=000000&color=blueviolet">
-  </a>
-  <a href="https://www.youtube.com/@LibreChat"> 
-    <img
-      src="https://img.shields.io/badge/YOUTUBE-red.svg?style=for-the-badge&logo=youtube&logoColor=white&labelColor=000000&logoWidth=20">
-  </a>
-  <a href="https://docs.librechat.ai"> 
-    <img
-      src="https://img.shields.io/badge/DOCS-blue.svg?style=for-the-badge&logo=read-the-docs&logoColor=white&labelColor=000000&logoWidth=20">
-  </a>
-  <a aria-label="Sponsors" href="https://github.com/sponsors/danny-avila">
-    <img
-      src="https://img.shields.io/badge/SPONSORS-brightgreen.svg?style=for-the-badge&logo=github-sponsors&logoColor=white&labelColor=000000&logoWidth=20">
-  </a>
-</p>
+**技术栈：** Python 3.12+ · FastAPI · SQLite · OpenAPI Actions · DeepSeek · BGE / RRF / Cross-Encoder · ONNX Runtime · OAuth 2.0 · Docker Compose
 
-<p align="center">
-<a href="https://railway.com/deploy/librechat-official?referralCode=HI9hWz&utm_medium=integration&utm_source=readme&utm_campaign=librechat">
-  <img src="https://railway.com/button.svg" alt="Deploy on Railway" height="30">
-</a>
-<a href="https://zeabur.com/templates/0X2ZY8">
-  <img src="https://zeabur.com/button.svg" alt="Deploy on Zeabur" height="30"/>
-</a>
-<a href="https://template.cloud.sealos.io/deploy?templateName=librechat">
-  <img src="https://raw.githubusercontent.com/labring-actions/templates/main/Deploy-on-Sealos.svg" alt="Deploy on Sealos" height="30">
-</a>
-</p>
+[启动与开发说明](extensions/support-agent/README.md) · [评测口径与结果](docs/support-agent/EVALUATION.md) · [知识库](extensions/support-agent/KNOWLEDGE.md) · [运行维护](extensions/support-agent/ops/README.md) · [上游原始 README](docs/support-agent/README.upstream.md)
 
-<p align="center">
-  <a href="https://www.librechat.ai/docs/translation">
-    <img 
-      src="https://img.shields.io/badge/dynamic/json.svg?style=for-the-badge&color=2096F3&label=locize&query=%24.translatedPercentage&url=https://api.locize.app/badgedata/4cb2598b-ed4d-469c-9b04-2ed531a8cb45&suffix=%+translated" 
-      alt="Translation Progress">
-  </a>
-</p>
+## 项目能力与个人实现
 
-## 🚀 What's New in v0.8.8
+| 能力 | 本项目新增实现 |
+| --- | --- |
+| 工单协同 | 创建草稿、分配负责人、记录处理过程、解决、关闭；状态转换校验与操作历史 |
+| 执行控制 | 模型只生成提案，用户独立页面确认；事务内重新授权、幂等请求、版本冲突检测 |
+| 多人使用 | 每人独立 OAuth 授权；员工、客服、管理员三类角色；组织及资源归属隔离 |
+| 知识问答 | MD/TXT 幂等导入、分块和历史版本；文档/段落/行号来源定位；证据不足时追问或拒答 |
+| 检索实验 | 词项与 BGE 向量召回、RRF 融合、Cross-Encoder 重排；量化 ONNX CPU 推理 |
+| 评测与运维 | 回答、工具轨迹、数据库状态联合验收；费用记录、自动检查、健康监控、备份及隔离恢复 |
 
-- **Agent Management API (beta):** Create, discover, update, and delete Agents; manage Agent files and Skills; and authenticate machine clients through deployment-bound OIDC identities while preserving existing role and Agent access controls. Public OpenAPI and Swagger UI cover inference, events, Agent management, and Skill management.
-- **Attached workspaces (highly experimental):** Select or save a per-Agent default workspace for each managed or personal code worker, then let Agents inspect trees, read and search files, author changes, and run Bash with bounded timeouts. Personal workers support bounded self-service enrollment, readiness status, and per-Agent Git identity.
-- **Background tool controls:** Optionally cancel ordinary background tools, including attached Bash, while keeping detached Subagent execution independent.
-- **Code approval controls:** Choose **Ask**, **Allow**, or **Deny** for file writes and command execution where administrators permit it, including a **Full access** mode for trusted attached environments. File Search and Run Code also honor role grants.
-- **Manual context compaction:** Start a summarize-only turn before the context window fills while preserving recent conversation content according to the deployment's summarization policy.
-- **Context Usage:** Inspect dialogue, retained tool traffic, Agent instructions, cache, cost, and runway pressure without double-counting category subsets.
-- **Unified attachments:** Upload once and let LibreChat route content to the model or extracted text, then provision File Search and Code tools only when needed.
-- **Models:** Added GPT-6 Astra and GPT-6.1 Sol, with Responses API routing and tool-call support.
-- **Agent and chat UI:** Unified tool activity, reasoning, search, and Agent workflows; added one draggable Pinned section for chats and favorites, morphing state icons, high-contrast themes, rich-text message copying, clearer sidebar titles, and refined live phase layouts.
-- **Observability:** Inspect ordered model conversations, tool rounds, and costs in the Trace Viewer; export correlated application logs through OpenTelemetry, configure allowlisted Langfuse trace identity and metadata, tag browser diagnostics with client build IDs, and scope Insights to authorized Agents.
-- **Reliability and security:** Strengthened Agent continuation and checkpoint recovery, Redis liveness detection, DocumentDB coordination, OpenID and MCP OAuth sessions, shared-link throttling, tenant isolation, attachment bounds, and upload error handling.
+当前状态为**本地可运行的工程项目**：已验证工单闭环、角色限制、双用户身份隔离及备份恢复。业务演示资料是模拟资料；公开文档评测使用单独的 IBM Cloud 历史快照。企业统一登录、Jira 等外部工单平台、生产高可用与容量压测尚未接入或验收。
 
-Read the [full v0.8.8 changelog](https://www.librechat.ai/changelog/v0.8.8).
+## 架构与执行边界
 
-# ✨ Features
+```mermaid
+flowchart LR
+    U[用户] --> L[LibreChat + DeepSeek]
+    L -->|12 个 OpenAPI 工具 / 个人 OAuth| A[FastAPI 业务服务]
+    A --> K[知识检索与来源定位]
+    A --> P[权限 / 提案 / 幂等 / 版本校验]
+    P --> D[(SQLite)]
+    U -->|独立登录和确认| C[服务台控制台]
+    C -->|事务内重新授权| P
+    L --> M[(MongoDB：用户和会话)]
+```
 
-- 🖥️ **UI & Experience** inspired by ChatGPT with enhanced design and features
+工单状态：`open → in_progress → resolved → closed`。员工仅访问本人工单，客服访问本人或分配给自己的工单，管理员访问本组织工单；只有提交人能关闭已解决工单。草稿和变更提案仅创建者可读、确认。工具凭证不能替代用户完成正式确认。
 
-- 🤖 **AI Model Selection**:  
-  - Anthropic (Claude), AWS Bedrock, OpenAI, Azure OpenAI, Google, Vertex AI, OpenAI Responses API (incl. Azure)
-  - [Custom Endpoints](https://www.librechat.ai/docs/quick_start/custom_endpoints): Use any OpenAI-compatible API with LibreChat, no proxy required
-  - Compatible with [Local & Remote AI Providers](https://www.librechat.ai/docs/configuration/librechat_yaml/ai_endpoints):
-    - Ollama, [AMD Lemonade](https://lemonade-server.ai/), groq, Cohere, Mistral AI, Apple MLX, koboldcpp, together.ai,
-    - OpenRouter, Helicone, Perplexity, ShuttleAI, Deepseek, Qwen, and more
+12 个工具包括：身份查询、知识检索、原文证据读取、工单列表/详情、草稿创建/查询、审计查询、可分配客服查询、处理历史查询、变更提案创建/查询。接口由 [OpenAPI 定义](extensions/support-agent/app/main.py) 和扩展路由生成。
 
-- 🔧 **[Code Interpreter API](https://www.librechat.ai/docs/features/code_interpreter)**: 
-  - Secure, Sandboxed Execution in Python, Node.js (JS/TS), Go, C/C++, Java, PHP, Rust, and Fortran
-  - Seamless File Handling: Upload, process, and download files directly
-  - No Privacy Concerns: Fully isolated and secure execution
-  - Open-Source & Self-Hostable: powered by [ClickHouse/code-interpreter](https://github.com/ClickHouse/code-interpreter)
+## 在 Windows / VS Code 运行
 
-- 🔦 **Agents & Tools Integration**:  
-  - **[LibreChat Agents](https://www.librechat.ai/docs/features/agents)**:
-    - No-Code Custom Assistants: Build specialized, AI-driven helpers
-    - Agent Marketplace: Discover and deploy community-built agents
-    - Collaborative Sharing: Share agents with specific users and groups
-    - Flexible & Extensible: Use MCP Servers, tools, file search, code execution, and more
-    - [Skills](https://www.librechat.ai/docs/features/skills): Create reusable `SKILL.md` instruction bundles for manual, automatic, or always-on agent workflows
-    - [Agent Plugins](https://www.librechat.ai/docs/features/agent_plugins): Experimentally bundle deployment Skills and MCP servers into startup-loaded packages
-    - [Subagents](https://www.librechat.ai/docs/features/subagents): Delegate focused work to isolated child agent runs with their own context windows
-    - Agent Management API: Automate Agent, file, and Skill management with deployment-bound OIDC clients
-    - Attached Code Workspaces: Let Agents inspect, search, edit, and run commands in managed or personal workspaces (highly experimental)
-    - Compatible with Custom Endpoints, OpenAI, Azure, Anthropic, AWS Bedrock, Google, Vertex AI, Responses API, and more
-    - [Model Context Protocol (MCP) Support](https://modelcontextprotocol.io/clients#librechat) for Tools
+准备 Git、Python 3.12 或更新版本、**PowerShell 7（`pwsh`）**、Docker Desktop（Linux containers / Compose v2）及 VS Code。模型对话调用 DeepSeek API，本机无需部署大语言模型；首次运行需联网下载依赖与镜像。当前自动化启动脚本针对 Windows，本地端口绑定 `127.0.0.1`。
 
-- 🔍 **Web Search**:  
-  - Search the internet and retrieve relevant information to enhance your AI context
-  - Combines search providers, content scrapers, and result rerankers for optimal results
-  - **Customizable Jina Reranking**: Configure custom Jina API URLs for reranking services
-  - **[Learn More →](https://www.librechat.ai/docs/features/web_search)**
+在 PowerShell 中执行：
 
-- 🪄 **Generative UI with Code Artifacts**:  
-  - [Code Artifacts](https://youtu.be/GfTj7O4gmd0?si=WJbdnemZpJzBrJo3) create React, HTML, and Mermaid content directly in chat
-  - Open previews fullscreen and export Mermaid diagrams as SVG or PNG
+```powershell
+git clone https://github.com/gsa-hash777/librechat-support-agent.git
+cd librechat-support-agent
+py -3.12 -m venv .venv
+.\.venv\Scripts\python.exe extensions/support-agent/scripts/project.py Setup
+```
 
-- 🎨 **Image Generation & Editing**
-  - Text-to-image and image-to-image with [GPT-Image-1](https://www.librechat.ai/docs/features/image_gen#1--openai-image-tools-recommended)
-  - Text-to-image with [Stable Diffusion](https://www.librechat.ai/docs/features/image_gen#3--stable-diffusion-local), [Flux](https://www.librechat.ai/docs/features/image_gen#4--flux), or any [MCP server](https://www.librechat.ai/docs/features/image_gen#5--model-context-protocol-mcp)
-  - Produce stunning visuals from prompts or refine existing images with a single instruction
+`Setup` 安装 Python 依赖，生成随机的本地凭证和根目录 `.env`，保留已有配置。仅在本机编辑 `.env` 中的 `DEEPSEEK_API_KEY`。随后执行：
 
-- 💾 **Presets & Context Management**:  
-  - Create, Save, & Share Custom Presets  
-  - Switch between AI Endpoints and Presets mid-chat
-  - Edit, Resubmit, and Continue Messages with Conversation branching  
-  - Create and share prompts with specific users and groups
-  - [Fork Messages & Conversations](https://www.librechat.ai/docs/features/fork) for Advanced Context control
-  - Compact long conversations on demand while preserving recent context
+```powershell
+.\.venv\Scripts\python.exe extensions/support-agent/scripts/project.py OperationsStart
+.\.venv\Scripts\python.exe extensions/support-agent/scripts/project.py OpenApps
+```
 
-- 💬 **Multimodal & File Interactions**:  
-  - Upload and analyze images with Claude 3, GPT-4.5, GPT-4o, o1, Llama-Vision, and Gemini 📸  
-  - Chat with Files using Custom Endpoints, OpenAI, Azure, Anthropic, AWS Bedrock, & Google 🗃️
-  - Copy messages as formatted rich text for documents, email, and collaboration apps
+也可在 VS Code 打开 [SupportAgent.code-workspace](SupportAgent.code-workspace)，依次运行 `Support: Setup`、`Support: OperationsStart (OAuth + TLS, no model calls)`、`Support: OpenApps (system browser, no model calls)`。启动和初始化不调用付费模型；聊天与标记为 paid 的评测会调用模型。
 
-- 🌎 **Multilingual UI**:
-  - English, 中文 (简体), 中文 (繁體), العربية, Deutsch, Español, Français, Italiano
-  - Polski, Português (PT), Português (BR), Русский, 日本語, Svenska, 한국어, Tiếng Việt
-  - Türkçe, Nederlands, עברית, Català, Čeština, Dansk, Eesti, فارسی
-  - Suomi, Magyar, Հայերեն, Bahasa Indonesia, ქართული, Latviešu, ไทย, ئۇيغۇرچە
+首次启动准备本地 HTTPS 证书，Windows 可能要求将该证书加入当前用户信任。服务启动后，在同一系统浏览器配置文件中完成以下操作：
 
-- 🧠 **Reasoning UI**:  
-  - Dynamic Reasoning UI for Chain-of-Thought/Reasoning AI models like DeepSeek-R1
+1. 打开 [LibreChat](http://localhost:3080)，使用本机 `.local/demo.json` 中的账号登录。
+2. 选择“企业客服工单 Agent”，按提示连接服务台；在 [服务台控制台](https://localhost:8443/console) 使用本机 `.local/users.json` 中自己的业务账号授权。
+3. 先查询有依据的业务问题，再创建工单草稿；打开确认链接，核对内容并确认创建。处理过程中分别以管理员、客服、提交人身份完成分配、处理、解决、关闭。
 
-- 🎨 **Customizable Interface**:  
-  - Customizable Dropdown & Interface that adapts to both power users and newcomers
-  - Light, dark, system, and high-contrast appearance modes
+账号文件、API Key、证书私钥、数据库、备份和本地评测原始日志均不应上传。部署到其他主机需配置真实域名、可信 HTTPS 和准确 OAuth 回调，不能直接将本地演示配置公开到互联网。
 
-- 📈 **Observability**:
-  - Export traces and logs with OpenTelemetry and connect Langfuse for Agent and model insights
+## 多人、开发与检查
 
-- 🌊 **[Resumable Streams](https://www.librechat.ai/docs/features/resumable_streams)**:  
-  - Never lose a response: AI responses automatically reconnect and resume if your connection drops
-  - Multi-Tab & Multi-Device Sync: Open the same chat in multiple tabs or pick up on another device
-  - Production-Ready: Works from single-server setups to horizontally scaled deployments with Redis
+```powershell
+# 准备独立 LibreChat 账号并共享同一个私有 Agent；每人仍需各自完成 OAuth
+.\.venv\Scripts\python.exe extensions/support-agent/scripts/project.py MultiUser
 
-- 🗣️ **Speech & Audio**:  
-  - Chat hands-free with Speech-to-Text and Text-to-Speech  
-  - Automatically send and play Audio  
-  - Supports OpenAI, Azure OpenAI, and Elevenlabs
+# 自动测试；不调用付费模型
+.\.venv\Scripts\python.exe extensions/support-agent/scripts/project.py Test
 
-- 📥 **Import & Export Conversations**:  
-  - Import Conversations from LibreChat, ChatGPT, Chatbot UI  
-  - Export conversations as screenshots, markdown, text, json
+# 健康与指标检查、在线备份
+.\.venv\Scripts\python.exe extensions/support-agent/scripts/project.py Monitor
+.\.venv\Scripts\python.exe extensions/support-agent/scripts/project.py Backup
 
-- 🔍 **Search & Discovery**:  
-  - Search all messages/conversations
+# 停止业务服务，保留持久化数据
+.\.venv\Scripts\python.exe extensions/support-agent/scripts/project.py Stop
+```
 
-- 👥 **Multi-User & Secure Access**:
-  - Multi-User, Secure Authentication with OAuth2, LDAP, & Email Login Support
-  - Built-in Moderation, and Token spend tools
+多人 LibreChat 登录资料生成在 `.local/librechat-users.json`，业务角色由服务端控制。普通启动不开启热重载；需要调试时运行 `Support: StartDebug`，使用工作区的 Docker attach 配置。此部署复用固定摘要的上游镜像，修改 Python 扩展可重启生效；修改上游 React/TypeScript 需另行安装前端依赖并构建。
 
-- 🎛️ **[Admin Panel](https://www.librechat.ai/docs/features/admin_panel)**:
-  - Browser-based UI to manage users, groups, roles, and configuration overrides
-  - Edit settings and per-role/group permissions live, without redeploying
-  - Bundled with the Docker Compose stacks for one-command setup
+可选 CPU 检索通过 `Support: Prepare CPU retrieval models`、`Support: Start with hybrid retrieval options` 准备。公开 IBM Cloud 资料在独立服务和索引中运行，参见 [公开评测说明](extensions/support-agent/evaluation/PUBLIC_EVALUATION.md)；不自动混入演示业务知识库。
 
-- ⚙️ **Configuration & Deployment**:  
-  - Configure Proxy, Reverse Proxy, Docker, & many Deployment options  
-  - Use [S3 with CloudFront](https://www.librechat.ai/docs/configuration/cdn/cloudfront) for stable media links, edge delivery, signed cookies, and secured downloads
-  - Use completely local or deploy on the cloud
+## 已测结果
 
-- 📖 **Open-Source & Community**:  
-  - Completely Open-Source & Built in Public  
-  - Community-driven development, support, and feedback
+2026-11-12 的本地实验，完整定义、失败项和限制见 [EVALUATION.md](docs/support-agent/EVALUATION.md)。[脱敏历史指标摘要](docs/support-agent/results/metrics-2026-11-12.json) 包含逐题状态、汇总和来源摘要，不包含私有对话、账号或数据库快照。
 
-[For a thorough review of our features, see our docs here](https://docs.librechat.ai/) 📚
+| 指标 | 实测结果 | 范围 |
+| --- | ---: | --- |
+| Agent 确认任务成功率 | **96 / 100 = 96%** | 8 类自建历史回归任务；96 成功、3 失败、1 预算中断未评分，未评分仍留在分母 |
+| Agent 端到端 P95 | **11.50 秒** | 99 条完整任务，本地串行；不含人工确认等待或评审 |
+| Macro Recall@5 | **32.25% → 46.56%（+14.32 个百分点）** | 72,442 个 IBM Cloud 公开文档片段、82 条固定已见检索任务，初始词项检索对比最终实验配置 |
+| 检索 Hit@5 | **53 / 82 = 64.63%** | 前 5 段至少命中一段标准相关证据 |
 
-## 🪶 All-In-One AI Conversations with LibreChat
+96% 不是官方公开 Agent 基准成绩或真实企业业务收益。46.56% 对应**离线评测配置，尚未替换服务默认检索配置**；相对前一版重排 45.69% 仅提升 0.88 个百分点，置信区间包含 0。保留失败结果，不以删题或改分母美化成绩。
 
-LibreChat is a self-hosted AI chat platform that unifies all major AI providers in a single, privacy-focused interface.
+## 代码与归属
 
-Beyond chat, LibreChat provides AI Agents, Model Context Protocol (MCP) support, Artifacts, Code Interpreter, custom actions, conversation search, and enterprise-ready multi-user authentication.
+- [extensions/support-agent/app](extensions/support-agent/app)：业务服务、权限、工单、知识库、OAuth。
+- [extensions/support-agent/integration](extensions/support-agent/integration)：LibreChat Agent / Actions 初始化与多人连接。
+- [extensions/support-agent/evaluation](extensions/support-agent/evaluation)：固定任务、判分规则、检索实验及费用保护。
+- [extensions/support-agent/tests](extensions/support-agent/tests)：服务与安全边界自动测试。
+- [extensions/support-agent/scripts](extensions/support-agent/scripts)：启动、开发、备份和监控。
+- [compose.support.yml](compose.support.yml)、[compose.operations.yml](compose.operations.yml)：本地业务部署。
 
-Open source, actively developed, and built for anyone who values control over their AI infrastructure.
-
----
-
-## 🌐 Resources
-
-**GitHub Repo:**
-  - **RAG API:** [github.com/LibreChat-AI/rag-api](https://github.com/LibreChat-AI/rag-api)
-  - **Website:** [github.com/LibreChat-AI/librechat.ai](https://github.com/LibreChat-AI/librechat.ai)
-
-**Other:**
-  - **Website:** [librechat.ai](https://librechat.ai)
-  - **Documentation:** [librechat.ai/docs](https://librechat.ai/docs)
-  - **Blog:** [librechat.ai/blog](https://librechat.ai/blog)
-
----
-
-## 📝 Changelog
-
-Keep up with the latest updates by visiting the releases page and notes:
-- [Releases](https://github.com/LibreChat-AI/LibreChat/releases)
-- [Changelog](https://www.librechat.ai/changelog) 
-
-**⚠️ Please consult the [changelog](https://www.librechat.ai/changelog) for breaking changes before updating.**
-
----
-
-## ⭐ Star History
-
-<p align="center">
-  <a href="https://www.star-history.com/?type=date&repos=danny-avila%2FLibreChat">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=danny-avila/LibreChat&type=date&theme=dark&legend=top-left&sealed_token=CXsk3L39t1nlibOv3pQloYwrz8R_yXxCAe1X3DG8sEnmu3PZvzSRZGf7JvisknF83yXqMwR6IcuKLolIQBulChAOseTYP1TDglfT6clOHXzspF-DJhmmsnGasrGpLfCeOEU56Bx761CJp9xDxza5rbyXW3F1GqWNtDf9pMroBq86vS70ilRWu16VyucF" />
-      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=danny-avila/LibreChat&type=date&legend=top-left&sealed_token=CXsk3L39t1nlibOv3pQloYwrz8R_yXxCAe1X3DG8sEnmu3PZvzSRZGf7JvisknF83yXqMwR6IcuKLolIQBulChAOseTYP1TDglfT6clOHXzspF-DJhmmsnGasrGpLfCeOEU56Bx761CJp9xDxza5rbyXW3F1GqWNtDf9pMroBq86vS70ilRWu16VyucF" />
-      <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=danny-avila/LibreChat&type=date&legend=top-left&sealed_token=CXsk3L39t1nlibOv3pQloYwrz8R_yXxCAe1X3DG8sEnmu3PZvzSRZGf7JvisknF83yXqMwR6IcuKLolIQBulChAOseTYP1TDglfT6clOHXzspF-DJhmmsnGasrGpLfCeOEU56Bx761CJp9xDxza5rbyXW3F1GqWNtDf9pMroBq86vS70ilRWu16VyucF" />
-    </picture>
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://trendshift.io/repositories/4685" target="_blank" style="padding: 10px;">
-    <img src="https://trendshift.io/api/badge/repositories/4685" alt="LibreChat-AI%2FLibreChat | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
-  </a>
-  <a href="https://runacap.com/ross-index/q1-24/" target="_blank" rel="noopener" style="margin-left: 20px;">
-    <img style="width: 260px; height: 56px" src="https://runacap.com/wp-content/uploads/2024/04/ROSS_badge_white_Q1_2024.svg" alt="ROSS Index - Fastest Growing Open-Source Startups in Q1 2024 | Runa Capital" width="260" height="56"/>
-  </a>
-</p>
-
----
-
-## ✨ Contributions
-
-Contributions, suggestions, bug reports and fixes are welcome!
-
-For new features, components, or extensions, please open an issue and discuss before sending a PR.
-
-If you'd like to help translate LibreChat into your language, we'd love your contribution! Improving our translations not only makes LibreChat more accessible to users around the world but also enhances the overall user experience. Please check out our [Translation Guide](https://www.librechat.ai/docs/translation).
-
----
-
-## 💖 This project exists in its current state thanks to all the people who contribute
-
-<a href="https://github.com/LibreChat-AI/LibreChat/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=LibreChat-AI/LibreChat" />
-</a>
-
----
-
-## 🎉 Special Thanks
-
-We thank [Locize](https://locize.com) for their translation management tools that support multiple languages in LibreChat.
-
-<p align="center">
-  <a href="https://locize.com" target="_blank" rel="noopener noreferrer">
-    <img src="https://github.com/user-attachments/assets/d6b70894-6064-475e-bb65-92a9e23e0077" alt="Locize Logo" height="50">
-  </a>
-</p>
+上游 LibreChat 代码和许可证完整保留，遵循仓库 [MIT LICENSE](LICENSE)。原始上游介绍存于 [README.upstream.md](docs/support-agent/README.upstream.md)（其中相对路径按上游仓库根目录解释）。第三方公开资料和模型的来源、固定版本与许可分别记录在 [公开资料协议](extensions/support-agent/evaluation/PUBLIC_EVALUATION.md) 和 [模型清单](extensions/support-agent/evaluation/public_models.json)；大型语料、索引和权重通过准备脚本下载，不随仓库发布。

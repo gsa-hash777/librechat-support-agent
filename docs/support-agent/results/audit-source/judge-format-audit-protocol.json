@@ -1,0 +1,34 @@
+{
+  "version": "judge-json-syntax-audit-v1",
+  "registered_at": "2026-11-12T09:54:02.907520+00:00",
+  "script_sha256": "2b6edb1260f618b2a256ab5948ce908eb2229b8d0f52b21d41feff6411dbc8bd",
+  "selection_scope": "Evaluator syntax repair, registered before all 100 executions completed; not Agent tuning.",
+  "observed_examples": [
+    "K04",
+    "K05",
+    "K08",
+    "K19",
+    "M09"
+  ],
+  "allowed_repairs": [
+    "At most one missing root closing brace, only with complete strings and all inner brackets closed.",
+    "Move an existing reasons list from the dimensions object to root when these are exactly the four dimensions plus reasons."
+  ],
+  "unchanged": [
+    "Original Agent responses, calls, snapshots and single-attempt counts.",
+    "All four existing dimension status/reason/evidence values and existing reasons list.",
+    "Original strict parser and task acceptance criteria.",
+    "All original run artifacts and every paid call in the shared budget ledger."
+  ],
+  "rejected": [
+    "finish_reason other than stop",
+    "missing dimensions or evidence",
+    "duplicate keys",
+    "invalid status values",
+    "extra keys",
+    "more than one missing closing bracket",
+    "unfinished strings",
+    "all other malformed structures"
+  ],
+  "application": "Apply once uniformly to all 100 saved rows; retain before/after, including fail and uncertain. No model calls or retries."
+}

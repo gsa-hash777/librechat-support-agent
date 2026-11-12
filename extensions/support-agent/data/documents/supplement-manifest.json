@@ -1,0 +1,190 @@
+{
+  "version": "support-supplement-v1",
+  "source": "data/documents/supplement.json",
+  "source_sha256": "58954a8ca3408c8615fd898117f76c252d8b7c4136e9917f18af913e702cfe5c",
+  "org_id": "demo",
+  "title": "星桥云办公模拟业务补充手册",
+  "synthetic": true,
+  "business_paragraphs_verbatim": true,
+  "document_count": 16,
+  "handbook_file": "support-supplement.md",
+  "handbook_sha256": "c612618c06360f0572d9b0fdb23119030e5af42176ced0d707bf8633186fa954",
+  "offset_unit": "Python Unicode code points; zero-based, end-exclusive; UTF-8 text with LF newlines",
+  "authoring": {
+    "kind": "project_authored_synthetic",
+    "created_date": "2026-11-10",
+    "author": "Codex assistant under project authoring request",
+    "scope": "仅模拟业务资料，不代表真实公司政策、本机功能、已执行业务动作或真实联系方式。",
+    "real_company_policy": false,
+    "local_implementation_documentation": false,
+    "real_business_owner_review_completed": false,
+    "selection_basis": "从原16篇之外选择独立业务排障、组织流程与资料条件；未按旧失败题补写答案。"
+  },
+  "baseline_sources": {
+    "data/knowledge.json": "8c09e9b0e8e9fd99633bdaf0bbde31d4308f9f2f845cdb72515e8c8a2c13aaf1",
+    "data/documents/knowledge.md": "0c5e4f19d2c6d6a60588e4515fc51604041ccdbb19d71cab6567667e1b8b6458",
+    "data/documents/manifest.json": "b1217033387d477d77e230d69e0c34fa46d768b8e92a37c49fa615375d0bb966"
+  },
+  "articles": [
+    {
+      "id": "KB-017",
+      "title": "员工离职交接与资料接管",
+      "source": "项目自编模拟业务规范 / 补充手册 / 员工离职交接与资料接管",
+      "content_sha256": "74bcec03c316a75448baa0948ae73690a85d01c9800ea6d2d13978e047cafce8",
+      "handbook_content_start": 385,
+      "handbook_content_end": 817,
+      "handbook_content_start_line": 13,
+      "handbook_content_end_line": 17
+    },
+    {
+      "id": "KB-018",
+      "title": "外部协作者访问到期与续期",
+      "source": "项目自编模拟业务规范 / 补充手册 / 外部协作者访问到期与续期",
+      "content_sha256": "1921e2ba91518b4505ca2f4eaaa34a7f3318bfb33b78e0d181ce97a12c6683fd",
+      "handbook_content_start": 880,
+      "handbook_content_end": 1322,
+      "handbook_content_start_line": 23,
+      "handbook_content_end_line": 27
+    },
+    {
+      "id": "KB-019",
+      "title": "团队合并时的项目归属核对",
+      "source": "项目自编模拟业务规范 / 补充手册 / 团队合并时的项目归属核对",
+      "content_sha256": "33fca0523e1e9f31597c9cfe6225c5f7b686472dfc189c07807e9bdf662c5e55",
+      "handbook_content_start": 1385,
+      "handbook_content_end": 1829,
+      "handbook_content_start_line": 33,
+      "handbook_content_end_line": 37
+    },
+    {
+      "id": "KB-020",
+      "title": "多人编辑冲突与内容合并",
+      "source": "项目自编模拟业务规范 / 补充手册 / 多人编辑冲突与内容合并",
+      "content_sha256": "b118492927478a6e77647f5ac54e0068e97597d14a1496a8d9e10e4afae046b2",
+      "handbook_content_start": 1890,
+      "handbook_content_end": 2332,
+      "handbook_content_start_line": 43,
+      "handbook_content_end_line": 47
+    },
+    {
+      "id": "KB-021",
+      "title": "业务审批退回与代理安排",
+      "source": "项目自编模拟业务规范 / 补充手册 / 业务审批退回与代理安排",
+      "content_sha256": "57d94161eab39b49f59e8e395ad13640305538631af02757316f6ceae5ea9e81",
+      "handbook_content_start": 2393,
+      "handbook_content_end": 2835,
+      "handbook_content_start_line": 53,
+      "handbook_content_end_line": 57
+    },
+    {
+      "id": "KB-022",
+      "title": "差旅报销材料补正与重复申报",
+      "source": "项目自编模拟业务规范 / 补充手册 / 差旅报销材料补正与重复申报",
+      "content_sha256": "6bc45ba2e4e9cc0506472a5eea463875eb1459eb6166011d0d8f01314697a9a6",
+      "handbook_content_start": 2900,
+      "handbook_content_end": 3345,
+      "handbook_content_start_line": 63,
+      "handbook_content_end_line": 67
+    },
+    {
+      "id": "KB-023",
+      "title": "办公设备采购与分批验收",
+      "source": "项目自编模拟业务规范 / 补充手册 / 办公设备采购与分批验收",
+      "content_sha256": "6e8d916cbf5a99eca2ab7b21457a0a35b127fd5987d3c83bb0ac6a4088c6ab33",
+      "handbook_content_start": 3406,
+      "handbook_content_end": 3838,
+      "handbook_content_start_line": 73,
+      "handbook_content_end_line": 77
+    },
+    {
+      "id": "KB-024",
+      "title": "会议室重复预约与占用核验",
+      "source": "项目自编模拟业务规范 / 补充手册 / 会议室重复预约与占用核验",
+      "content_sha256": "4e8eb8d6d14f2e47551863c5b85fdc267cdb2cc04bcb1885e75ad7e9864d3285",
+      "handbook_content_start": 3901,
+      "handbook_content_end": 4344,
+      "handbook_content_start_line": 83,
+      "handbook_content_end_line": 87
+    },
+    {
+      "id": "KB-025",
+      "title": "任务通知未收到与免打扰检查",
+      "source": "项目自编模拟业务规范 / 补充手册 / 任务通知未收到与免打扰检查",
+      "content_sha256": "5670f02250c4b12c1d7e4b4a7d878a64aff1741b2f398f3d76f0802440de9cb4",
+      "handbook_content_start": 4409,
+      "handbook_content_end": 4852,
+      "handbook_content_start_line": 93,
+      "handbook_content_end_line": 97
+    },
+    {
+      "id": "KB-026",
+      "title": "离线编辑与重新联网后的同步核对",
+      "source": "项目自编模拟业务规范 / 补充手册 / 离线编辑与重新联网后的同步核对",
+      "content_sha256": "407d5c2a2b417e274fab059e073cab3e8f58594f8ea21c8c78e01d14e5266ad1",
+      "handbook_content_start": 4921,
+      "handbook_content_end": 5363,
+      "handbook_content_start_line": 103,
+      "handbook_content_end_line": 107
+    },
+    {
+      "id": "KB-027",
+      "title": "业务记录批量登记与校验报告",
+      "source": "项目自编模拟业务规范 / 补充手册 / 业务记录批量登记与校验报告",
+      "content_sha256": "92900dbc63b2b7d06e6a183bbcf173ff383af31d0cfb4018891034de4ca53aeb",
+      "handbook_content_start": 5428,
+      "handbook_content_end": 5873,
+      "handbook_content_start_line": 113,
+      "handbook_content_end_line": 117
+    },
+    {
+      "id": "KB-028",
+      "title": "项目汇总报表与明细数量差异",
+      "source": "项目自编模拟业务规范 / 补充手册 / 项目汇总报表与明细数量差异",
+      "content_sha256": "d2857c0eefdf0b3f6381ee910479c12d14867bd96980290e6cda43fff29794fc",
+      "handbook_content_start": 5938,
+      "handbook_content_end": 6376,
+      "handbook_content_start_line": 123,
+      "handbook_content_end_line": 127
+    },
+    {
+      "id": "KB-029",
+      "title": "项目归档与模板复用边界",
+      "source": "项目自编模拟业务规范 / 补充手册 / 项目归档与模板复用边界",
+      "content_sha256": "41f6a28721d5a212b22290ec6785a1bdfeaebc79a3de323f38fb9ea36aa93d32",
+      "handbook_content_start": 6437,
+      "handbook_content_end": 6872,
+      "handbook_content_start_line": 133,
+      "handbook_content_end_line": 137
+    },
+    {
+      "id": "KB-030",
+      "title": "同名成员选择与目录信息核对",
+      "source": "项目自编模拟业务规范 / 补充手册 / 同名成员选择与目录信息核对",
+      "content_sha256": "c3c8863db203d3907302357c06f9fd034cf209d38e77239200ed6fd17dfab4ed",
+      "handbook_content_start": 6937,
+      "handbook_content_end": 7383,
+      "handbook_content_start_line": 143,
+      "handbook_content_end_line": 147
+    },
+    {
+      "id": "KB-031",
+      "title": "业务附件外发前的审阅与脱敏",
+      "source": "项目自编模拟业务规范 / 补充手册 / 业务附件外发前的审阅与脱敏",
+      "content_sha256": "3353992a53f40537f1fb24cebed3925c86cb9f41cf75a21481f03356892be78d",
+      "handbook_content_start": 7448,
+      "handbook_content_end": 7896,
+      "handbook_content_start_line": 153,
+      "handbook_content_end_line": 157
+    },
+    {
+      "id": "KB-032",
+      "title": "现场照片材料的清晰度与补拍",
+      "source": "项目自编模拟业务规范 / 补充手册 / 现场照片材料的清晰度与补拍",
+      "content_sha256": "b84c90fbe768ab6b9bc9b2fb5fc6f75c1ef265ab7b33a14705319bdd841e29b7",
+      "handbook_content_start": 7961,
+      "handbook_content_end": 8399,
+      "handbook_content_start_line": 163,
+      "handbook_content_end_line": 167
+    }
+  ]
+}

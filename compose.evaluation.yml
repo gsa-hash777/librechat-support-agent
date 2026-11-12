@@ -1,0 +1,28 @@
+# Optional isolated lab. Start together with compose.support.yml using --profile evaluation.
+services:
+  support-eval:
+    profiles: [evaluation]
+    build: ./extensions/support-agent
+    command: [python, -m, uvicorn, "app.main:create_app", --factory, --host, "0.0.0.0", --port, "8090"]
+    environment:
+      SUPPORT_EVALUATION: isolated-v1
+      SUPPORT_CONFIG_PATH: /run/secrets/eval-users.json
+      SUPPORT_DB_PATH: /data/evaluation.db
+      SUPPORT_PUBLIC_BASE_URL: http://localhost:8091
+      SUPPORT_TOOL_BASE_URL: http://support-eval:8090
+    volumes:
+      - ./extensions/support-agent/app:/app/app:ro
+      - ./extensions/support-agent/data:/app/data:ro
+      - ./extensions/support-agent/evaluation:/app/evaluation:ro
+      - ./.local/evaluation/users.json:/run/secrets/eval-users.json:ro
+      - support-eval-data:/data
+    ports:
+      - "127.0.0.1:8091:8090"
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8090/health', timeout=3)"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    mem_limit: 256m
+volumes:
+  support-eval-data:

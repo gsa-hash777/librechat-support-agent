@@ -191,6 +191,11 @@ scripts/activity-labels/results/
 
 !e2e/lighthouse/librechat.yaml
 /.lighthouse/
+/.local/
+!/SupportAgent.code-workspace
+# Versioned synthetic fixtures required by the Support Agent and its tests.
+# Runtime imports, credentials and databases remain in .local/ or Docker volumes.
+!/extensions/support-agent/data/
 /e2e/lighthouse/.test-results/
 /e2e/rum/.test-results/
 # Chrome user-data directories a Lighthouse run leaves in the repository root when the browser

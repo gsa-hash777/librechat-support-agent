@@ -1,0 +1,5 @@
+# Opt-in VS Code debugger, layered AFTER compose.operations.yml.
+services:
+  support-agent:
+    command: [python, -m, debugpy, --listen, "0.0.0.0:5678", -m, uvicorn, "app.main:create_app", --factory, --host, "0.0.0.0", --port, "8090", --reload, --reload-dir, /app/app, --no-access-log]
+    ports: !override ["127.0.0.1:8090:8090", "127.0.0.1:5678:5678"]

@@ -1,0 +1,66 @@
+{
+  "models": {
+    "embedding": {
+      "repo": "Xenova/bge-small-zh-v1.5",
+      "revision": "75c43b069aac4d136ba6bc1122f995fedcfd2781",
+      "license": "MIT (original BAAI model)",
+      "files": {
+        "model.onnx": {
+          "remote": "onnx/model_quantized.onnx",
+          "size": 24010842,
+          "sha256": "15b717c382bcb518ba457b93ea6850ede7f4f1cd8937454aa06972366cd19bcc",
+          "git_blob_sha1": "7f07d781901b2dd36ca97d7e47d17f46b8a15c16"
+        },
+        "tokenizer.json": {
+          "remote": "tokenizer.json",
+          "size": 439125,
+          "sha256": null,
+          "git_blob_sha1": "cdb3043fc938fc918c06e66cf704c2ba58f88747"
+        },
+        "config.json": {
+          "remote": "config.json",
+          "size": 716,
+          "sha256": null,
+          "git_blob_sha1": "d590a6643f5dcdd0cfb0477e3c291488c16fc2d7"
+        },
+        "README.md": {
+          "remote": "README.md",
+          "size": 1057,
+          "sha256": null,
+          "git_blob_sha1": "e26ec7fcc01a7aff66171d44acff0a80fae865e1"
+        }
+      }
+    },
+    "reranker": {
+      "repo": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+      "revision": "1427fd652930e4ba29e8149678df786c240d8825",
+      "license": "Apache-2.0",
+      "files": {
+        "model.onnx": {
+          "remote": "onnx/model_quint8_avx2.onnx",
+          "size": 118620016,
+          "sha256": "6c2513767fb63d008a4377bef7a7a3555433d9436342bb53e35a3a72ffc52d4b",
+          "git_blob_sha1": "0016f2d51a39cdb189b478aa5fcd722f425b9d86"
+        },
+        "tokenizer.json": {
+          "remote": "tokenizer.json",
+          "size": 17082660,
+          "sha256": "62c24cdc13d4c9952d63718d6c9fa4c287974249e16b7ade6d5a85e7bbb75626",
+          "git_blob_sha1": "b77624b6c85b399b6d11c581617e579ce832af28"
+        },
+        "config.json": {
+          "remote": "config.json",
+          "size": 891,
+          "sha256": null,
+          "git_blob_sha1": "43ac97f1bef372d4f1d30a32f9a84baffcf6575d"
+        },
+        "README.md": {
+          "remote": "README.md",
+          "size": 2278,
+          "sha256": null,
+          "git_blob_sha1": "c0f626ab888d9512bc57b224b13ff97ca93e3cb0"
+        }
+      }
+    }
+  }
+}

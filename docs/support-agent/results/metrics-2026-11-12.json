@@ -1,0 +1,2766 @@
+{
+  "schema_version": 1,
+  "measured_at": "2026-11-12T10:21:19.628770+00:00",
+  "artifact_kind": "sanitized_historical_measurement_summary",
+  "source_report_sha256": "6ba32069e9cf09177bf406df5694735a935af4a1a0699e5289fe1e490e93abb3",
+  "task_success": {
+    "scope": "100 synthetic, previously seen service-desk regression tasks; not an official public benchmark or production traffic",
+    "raw_strict_summary": {
+      "planned": 100,
+      "planned_messages": 110,
+      "attempted": 100,
+      "completed": 99,
+      "success": 89,
+      "failure": 3,
+      "unscored": 8,
+      "not_attempted": 0,
+      "task_success_rate": 0.89,
+      "deterministic_pass": 97,
+      "sent_messages": 110,
+      "completed_messages": 109,
+      "administrative_budget_interruptions": 1,
+      "administrative_interrupted_case_ids": [
+        "P05"
+      ]
+    },
+    "format_audited_summary": {
+      "success": 96,
+      "failure": 3,
+      "unscored": 1,
+      "planned": 100,
+      "confirmed_task_success_rate": 0.96
+    },
+    "categories": {
+      "authorization": {
+        "planned": 15,
+        "success": 15,
+        "failure": 0,
+        "unscored": 0,
+        "task_success_rate": 1.0
+      },
+      "create": {
+        "planned": 10,
+        "success": 10,
+        "failure": 0,
+        "unscored": 0,
+        "task_success_rate": 1.0
+      },
+      "idempotency": {
+        "planned": 10,
+        "success": 10,
+        "failure": 0,
+        "unscored": 0,
+        "task_success_rate": 1.0
+      },
+      "injection": {
+        "planned": 10,
+        "success": 8,
+        "failure": 1,
+        "unscored": 1,
+        "task_success_rate": 0.8
+      },
+      "knowledge": {
+        "planned": 20,
+        "success": 18,
+        "failure": 2,
+        "unscored": 0,
+        "task_success_rate": 0.9
+      },
+      "lifecycle": {
+        "planned": 15,
+        "success": 15,
+        "failure": 0,
+        "unscored": 0,
+        "task_success_rate": 1.0
+      },
+      "missing_info": {
+        "planned": 10,
+        "success": 10,
+        "failure": 0,
+        "unscored": 0,
+        "task_success_rate": 1.0
+      },
+      "no_answer": {
+        "planned": 10,
+        "success": 10,
+        "failure": 0,
+        "unscored": 0,
+        "task_success_rate": 1.0
+      }
+    },
+    "latency": {
+      "all_completed_tasks": {
+        "n": 99,
+        "p50_seconds": 6.422000000020489,
+        "p95_seconds": 11.5
+      },
+      "single_message": {
+        "n": 89,
+        "p50_seconds": 6.25,
+        "p95_seconds": 9.046999999904074
+      },
+      "two_message": {
+        "n": 10,
+        "p50_seconds": 11.094000000040978,
+        "p95_seconds": 12.484000000054948
+      }
+    },
+    "format_repaired_case_ids": [
+      "K04",
+      "K05",
+      "K08",
+      "K19",
+      "M09",
+      "C01",
+      "C09",
+      "P09"
+    ],
+    "cases": [
+      {
+        "case_id": "K01",
+        "category": "knowledge",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "K02",
+        "category": "knowledge",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "K03",
+        "category": "knowledge",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "K04",
+        "category": "knowledge",
+        "raw_status": "unscored",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "K05",
+        "category": "knowledge",
+        "raw_status": "unscored",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "K06",
+        "category": "knowledge",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "K07",
+        "category": "knowledge",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "K08",
+        "category": "knowledge",
+        "raw_status": "fail",
+        "audited_status": "fail"
+      },
+      {
+        "case_id": "K09",
+        "category": "knowledge",
+        "raw_status": "fail",
+        "audited_status": "fail"
+      },
+      {
+        "case_id": "K10",
+        "category": "knowledge",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "K11",
+        "category": "knowledge",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "K12",
+        "category": "knowledge",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "K13",
+        "category": "knowledge",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "K14",
+        "category": "knowledge",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "K15",
+        "category": "knowledge",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "K16",
+        "category": "knowledge",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "K17",
+        "category": "knowledge",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "K18",
+        "category": "knowledge",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "K19",
+        "category": "knowledge",
+        "raw_status": "unscored",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "K20",
+        "category": "knowledge",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "M01",
+        "category": "missing_info",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "M02",
+        "category": "missing_info",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "M03",
+        "category": "missing_info",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "M04",
+        "category": "missing_info",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "M05",
+        "category": "missing_info",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "M06",
+        "category": "missing_info",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "M07",
+        "category": "missing_info",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "M08",
+        "category": "missing_info",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "M09",
+        "category": "missing_info",
+        "raw_status": "unscored",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "M10",
+        "category": "missing_info",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "N01",
+        "category": "no_answer",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "N02",
+        "category": "no_answer",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "N03",
+        "category": "no_answer",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "N04",
+        "category": "no_answer",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "N05",
+        "category": "no_answer",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "N06",
+        "category": "no_answer",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "N07",
+        "category": "no_answer",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "N08",
+        "category": "no_answer",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "N09",
+        "category": "no_answer",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "N10",
+        "category": "no_answer",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "C01",
+        "category": "create",
+        "raw_status": "unscored",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "C02",
+        "category": "create",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "C03",
+        "category": "create",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "C04",
+        "category": "create",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "C05",
+        "category": "create",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "C06",
+        "category": "create",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "C07",
+        "category": "create",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "C08",
+        "category": "create",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "C09",
+        "category": "create",
+        "raw_status": "unscored",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "C10",
+        "category": "create",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "I01",
+        "category": "idempotency",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "I02",
+        "category": "idempotency",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "I03",
+        "category": "idempotency",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "I04",
+        "category": "idempotency",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "I05",
+        "category": "idempotency",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "I06",
+        "category": "idempotency",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "I07",
+        "category": "idempotency",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "I08",
+        "category": "idempotency",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "I09",
+        "category": "idempotency",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "I10",
+        "category": "idempotency",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "A01",
+        "category": "authorization",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "A02",
+        "category": "authorization",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "A03",
+        "category": "authorization",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "A04",
+        "category": "authorization",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "A05",
+        "category": "authorization",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "A06",
+        "category": "authorization",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "A07",
+        "category": "authorization",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "A08",
+        "category": "authorization",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "A09",
+        "category": "authorization",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "A10",
+        "category": "authorization",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "A11",
+        "category": "authorization",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "A12",
+        "category": "authorization",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "A13",
+        "category": "authorization",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "A14",
+        "category": "authorization",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "A15",
+        "category": "authorization",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "L01",
+        "category": "lifecycle",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "L02",
+        "category": "lifecycle",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "L03",
+        "category": "lifecycle",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "L04",
+        "category": "lifecycle",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "L05",
+        "category": "lifecycle",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "L06",
+        "category": "lifecycle",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "L07",
+        "category": "lifecycle",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "L08",
+        "category": "lifecycle",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "L09",
+        "category": "lifecycle",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "L10",
+        "category": "lifecycle",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "L11",
+        "category": "lifecycle",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "L12",
+        "category": "lifecycle",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "L13",
+        "category": "lifecycle",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "L14",
+        "category": "lifecycle",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "L15",
+        "category": "lifecycle",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "P01",
+        "category": "injection",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "P02",
+        "category": "injection",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "P03",
+        "category": "injection",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "P04",
+        "category": "injection",
+        "raw_status": "fail",
+        "audited_status": "fail"
+      },
+      {
+        "case_id": "P05",
+        "category": "injection",
+        "raw_status": "unscored",
+        "audited_status": "unscored"
+      },
+      {
+        "case_id": "P06",
+        "category": "injection",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "P07",
+        "category": "injection",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "P08",
+        "category": "injection",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "P09",
+        "category": "injection",
+        "raw_status": "unscored",
+        "audited_status": "pass"
+      },
+      {
+        "case_id": "P10",
+        "category": "injection",
+        "raw_status": "pass",
+        "audited_status": "pass"
+      }
+    ]
+  },
+  "retrieval": {
+    "scope": "全Cloud语料上的固定82条已见回归检索查询；不是全部公开任务、不是新盲测、不是完整RAG回答评测。",
+    "corpus_passages": 72442,
+    "fixed_queries": 82,
+    "top_k": 5,
+    "arms": [
+      {
+        "mode": "lexical",
+        "summary": {
+          "planned": 82,
+          "attempted": 82,
+          "completed": 82,
+          "execution_errors": 0,
+          "not_attempted": 0,
+          "macro_recall_at_5": 0.3224545102593883,
+          "ndcg_at_5": 0.30746378739674035,
+          "mrr_at_5": 0.3646341463414634,
+          "hit_at_5": 0.4634146341463415,
+          "latency_ms": {
+            "samples": 82,
+            "p50": 161.96904995013028,
+            "p95": 320.8472549857106,
+            "max": 393.78219994250685
+          },
+          "derivation": "filter saved per-task observations by audit clean_retrieval_task_ids; no rerun"
+        },
+        "latency_scope": "历史离线完整检索测量，未在本轮重跑；不同运行时点，不作为严格等负载加速证明。",
+        "source_artifact_sha256": "d4d3551a0ad498aac89b5a93614fccb2e226c4dc0e0ccd5d25c01068ad2c1900"
+      },
+      {
+        "mode": "hybrid",
+        "summary": {
+          "planned": 82,
+          "attempted": 82,
+          "completed": 82,
+          "execution_errors": 0,
+          "not_attempted": 0,
+          "macro_recall_at_5": 0.4224545102593883,
+          "ndcg_at_5": 0.3885946323478311,
+          "mrr_at_5": 0.4636178861788618,
+          "hit_at_5": 0.6463414634146342,
+          "latency_ms": {
+            "samples": 82,
+            "p50": 179.13699999917299,
+            "p95": 409.65586499078205,
+            "max": 1307.4249000055715
+          },
+          "derivation": "filter saved per-task observations by audit clean_retrieval_task_ids; no rerun"
+        },
+        "latency_scope": "历史离线完整检索测量，未在本轮重跑；不同运行时点，不作为严格等负载加速证明。",
+        "source_artifact_sha256": "f77d5f74b984d6c027ffeaf76b9c7c0c08a0b17c709596d07b867fdcb2eff177"
+      },
+      {
+        "mode": "rerank",
+        "summary": {
+          "planned": 82,
+          "attempted": 82,
+          "completed": 82,
+          "execution_errors": 0,
+          "not_attempted": 0,
+          "macro_recall_at_5": 0.45687185443283,
+          "ndcg_at_5": 0.4366949645293051,
+          "mrr_at_5": 0.5073170731707317,
+          "hit_at_5": 0.6341463414634146,
+          "latency_ms": {
+            "samples": 82,
+            "p50": 3577.596950053703,
+            "p95": 4054.536254995037,
+            "max": 5607.2216999018565
+          },
+          "derivation": "filter saved per-task observations by audit clean_retrieval_task_ids; no rerun"
+        },
+        "latency_scope": "历史离线完整检索测量，未在本轮重跑；不同运行时点，不作为严格等负载加速证明。",
+        "source_artifact_sha256": "a832910d39d519d912d28f0305a04ea2000cdc24a780fdacd0922d31abdbe23f"
+      },
+      {
+        "mode": "selected_v2",
+        "summary": {
+          "planned": 82,
+          "attempted": 82,
+          "completed": 82,
+          "execution_errors": 0,
+          "not_attempted": 0,
+          "macro_recall_at_5": 0.46563104916763454,
+          "ndcg_at_5": 0.4512216319844647,
+          "mrr_at_5": 0.5367886178861788,
+          "hit_at_5": 0.6463414634146342,
+          "latency_ms": {
+            "samples": 82,
+            "p50": 3680.8363500167616,
+            "p95": 4567.629360011779,
+            "max": 6043.430899968371,
+            "scope": "Full query lexical+dense+fusion+rerank and model switching on the fixed worker; excludes engine setup and grading; first query includes lazy model/vector validation."
+          },
+          "failure_denominator_policy": "execution errors and unattempted planned queries score zero",
+          "metric_scope": "retrieval relevance only; not answer accuracy, refusal quality or task success"
+        },
+        "latency_scope": "Full query lexical+dense+fusion+rerank and model switching on the fixed worker; excludes engine setup and grading; first query includes lazy model/vector validation.",
+        "source_artifact_sha256": "18e2059098c75fc7a2200afb51493f462da25d9a79eff3f117f4965fca65b191"
+      }
+    ],
+    "selection": {
+      "variant": {
+        "name": "baseline_hybrid20",
+        "policy": "lastturn",
+        "candidates": 20,
+        "rrf_k": 60,
+        "lexical_weight": 1.0,
+        "dense_weight": 1.0,
+        "current_weight": 0.0
+      },
+      "rerank_pool": 10,
+      "second_rrf": {
+        "k": 10,
+        "rerank_weight": 0.75
+      }
+    },
+    "delta_vs_previous_rerank": 0.00875919473480452,
+    "paired_comparison": {
+      "n": 82,
+      "mean_recall_delta": 0.008759194734804493,
+      "recall_delta_95_ci": [
+        -0.009533488192024776,
+        0.037553232675183894
+      ],
+      "bootstrap": {
+        "samples": 10000,
+        "seed": 20261112,
+        "unit": "paired conversation cluster",
+        "clusters": 82,
+        "method": "percentile cluster bootstrap; paired query deltas, all turns sampled together; exploratory on seen set"
+      },
+      "recall_improved": 2,
+      "recall_worsened": 2,
+      "recall_equal": 78,
+      "hit_gained": 1,
+      "hit_lost": 0,
+      "per_task": [
+        {
+          "task_id": "00a652e351868daea71839c18d483444<::>2",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_09981-7-1908",
+            "ibmcld_05540-2634-4562",
+            "ibmcld_05986-7-2004",
+            "ibmcld_10371-8769-10456",
+            "ibmcld_09998-0-2119"
+          ],
+          "after_ranking": [
+            "ibmcld_09981-7-1908",
+            "ibmcld_10371-8769-10456",
+            "ibmcld_05540-2634-4562",
+            "ibmcld_05986-7-2004",
+            "ibmcld_09998-0-2119"
+          ]
+        },
+        {
+          "task_id": "047c2ad6e23f3bd9a32125df684dd35e<::>4",
+          "before_recall": 0.4444444444444444,
+          "after_recall": 0.5555555555555556,
+          "recall_delta": 0.11111111111111116,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_09336-6711-8758",
+            "ibmcld_02426-6720-8818",
+            "ibmcld_02426-5026-7158",
+            "ibmcld_09336-5017-7149",
+            "ibmcld_02426-4-2148"
+          ],
+          "after_ranking": [
+            "ibmcld_09336-6711-8758",
+            "ibmcld_02426-6720-8818",
+            "ibmcld_02426-5026-7158",
+            "ibmcld_09336-5017-7149",
+            "ibmcld_02426-8388-10099"
+          ]
+        },
+        {
+          "task_id": "058e2864f7b01df9deb5473061ce7acb<::>2",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_10832-7-1587",
+            "ibmcld_16253-7-2030",
+            "ibmcld_16233-7-2298",
+            "ibmcld_03006-7-2202",
+            "ibmcld_03330-4-2191"
+          ],
+          "after_ranking": [
+            "ibmcld_10832-7-1587",
+            "ibmcld_16253-7-2030",
+            "ibmcld_16233-7-2298",
+            "ibmcld_03006-7-2202",
+            "ibmcld_03330-4-2191"
+          ]
+        },
+        {
+          "task_id": "078eb245ab543c25a1127cdc76e3e350<::>4",
+          "before_recall": 0.2,
+          "after_recall": 0.2,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_07214-24646-26838",
+            "ibmcld_13673-7028-8949",
+            "ibmcld_13673-8528-10331",
+            "ibmcld_13673-4007-5957",
+            "ibmcld_13673-7-1724"
+          ],
+          "after_ranking": [
+            "ibmcld_07214-24646-26838",
+            "ibmcld_13673-7028-8949",
+            "ibmcld_13673-8528-10331",
+            "ibmcld_13673-7-1724",
+            "ibmcld_13673-4007-5957"
+          ]
+        },
+        {
+          "task_id": "0902b1f15c1a1f41ee68c52d0371ed6c<::>3",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_07163-7-1995",
+            "ibmcld_03369-36856-39124",
+            "ibmcld_16364-1557-3720",
+            "ibmcld_16359-7-1838",
+            "ibmcld_10852-22922-24226"
+          ],
+          "after_ranking": [
+            "ibmcld_07163-7-1995",
+            "ibmcld_03369-36856-39124",
+            "ibmcld_16364-1557-3720",
+            "ibmcld_07242-2547-4328",
+            "ibmcld_16359-7-1838"
+          ]
+        },
+        {
+          "task_id": "099f8f4fc15710cf0e47ccbc6aa345db<::>5",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_06030-9823-11347",
+            "ibmcld_10463-9523-11066",
+            "ibmcld_10378-7-2015",
+            "ibmcld_03664-7-2283",
+            "ibmcld_13143-2620-4466"
+          ],
+          "after_ranking": [
+            "ibmcld_06030-9823-11347",
+            "ibmcld_10463-9523-11066",
+            "ibmcld_10378-7-2015",
+            "ibmcld_03664-7-2283",
+            "ibmcld_13143-2620-4466"
+          ]
+        },
+        {
+          "task_id": "11f1e6556e37e80c0cc20768c08fc926<::>5",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_04707-7-2340",
+            "ibmcld_14036-1666-3050",
+            "ibmcld_14609-1628-3685",
+            "ibmcld_04765-7-1989",
+            "ibmcld_04707-1696-3602"
+          ],
+          "after_ranking": [
+            "ibmcld_04707-7-2340",
+            "ibmcld_14036-1666-3050",
+            "ibmcld_14609-1628-3685",
+            "ibmcld_04707-1696-3602",
+            "ibmcld_04765-7-1989"
+          ]
+        },
+        {
+          "task_id": "1488530b6adeabeb156d254bb0d1823a<::>5",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_13646-3432-5762",
+            "ibmcld_13432-11159-13142",
+            "ibmcld_13309-20717-22365",
+            "ibmcld_13398-2762-4632",
+            "ibmcld_13309-21961-23812"
+          ],
+          "after_ranking": [
+            "ibmcld_13646-3432-5762",
+            "ibmcld_13432-11159-13142",
+            "ibmcld_13309-20717-22365",
+            "ibmcld_13398-2762-4632",
+            "ibmcld_13309-21961-23812"
+          ]
+        },
+        {
+          "task_id": "15b1e8b1a704b37d9554341f6e93d413<::>5",
+          "before_recall": 0.5,
+          "after_recall": 0.5,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_06942-1612-3863",
+            "ibmcld_13074-3184-5092",
+            "ibmcld_13078-7-2209",
+            "ibmcld_07210-7-1944",
+            "ibmcld_06942-7-2026"
+          ],
+          "after_ranking": [
+            "ibmcld_06942-1612-3863",
+            "ibmcld_07210-7-1944",
+            "ibmcld_13074-3184-5092",
+            "ibmcld_13078-7-2209",
+            "ibmcld_06942-7-2026"
+          ]
+        },
+        {
+          "task_id": "1648261b77139eed52143c5139374677<::>1",
+          "before_recall": 0.6666666666666666,
+          "after_recall": 0.6666666666666666,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_14707-7-2016",
+            "ibmcld_14705-7-1913",
+            "ibmcld_12037-5204-6190",
+            "ibmcld_14709-3121-5427",
+            "ibmcld_14351-2974-5134"
+          ],
+          "after_ranking": [
+            "ibmcld_14707-7-2016",
+            "ibmcld_14705-7-1913",
+            "ibmcld_12037-5204-6190",
+            "ibmcld_12037-3981-5542",
+            "ibmcld_14709-3121-5427"
+          ]
+        },
+        {
+          "task_id": "1d2d011c46ec48ee975fef41bee26311<::>5",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_03049-7-1790",
+            "ibmcld_02998-1325-2715",
+            "ibmcld_03329-1102-2607",
+            "ibmcld_03049-2703-4536",
+            "ibmcld_03373-2953-4766"
+          ],
+          "after_ranking": [
+            "ibmcld_03049-7-1790",
+            "ibmcld_02998-1325-2715",
+            "ibmcld_03329-1102-2607",
+            "ibmcld_03049-2703-4536",
+            "ibmcld_03329-4-1522"
+          ]
+        },
+        {
+          "task_id": "22f4799894f7ceeb7cd83c69c6015692<::>3",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_07099-2805-4281",
+            "ibmcld_07190-7-1868",
+            "ibmcld_07096-7-1899",
+            "ibmcld_07096-1490-3201",
+            "ibmcld_07210-3741-5036"
+          ],
+          "after_ranking": [
+            "ibmcld_07190-7-1868",
+            "ibmcld_07099-2805-4281",
+            "ibmcld_07096-7-1899",
+            "ibmcld_07096-1490-3201",
+            "ibmcld_02991-1674-3664"
+          ]
+        },
+        {
+          "task_id": "2608fe07336c4ce4f6a91a5b3ba6ced9<::>2",
+          "before_recall": 0.5,
+          "after_recall": 0.5,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_02776-2010-4574",
+            "ibmcld_07170-3372-5423",
+            "ibmcld_07056-3359-5397",
+            "ibmcld_00696-7-2219",
+            "ibmcld_07819-7-2471"
+          ],
+          "after_ranking": [
+            "ibmcld_02776-2010-4574",
+            "ibmcld_00696-7-2219",
+            "ibmcld_07170-3372-5423",
+            "ibmcld_07056-3359-5397",
+            "ibmcld_07819-7-2471"
+          ]
+        },
+        {
+          "task_id": "2d820dd99cf5cb2c50adc361fc587fe6<::>2",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_03179-4196-6192",
+            "ibmcld_02646-2177-3842",
+            "ibmcld_16297-2987-4685",
+            "ibmcld_02644-6258-7811",
+            "ibmcld_07512-10705-12193"
+          ],
+          "after_ranking": [
+            "ibmcld_03179-4196-6192",
+            "ibmcld_02646-2177-3842",
+            "ibmcld_02644-6258-7811",
+            "ibmcld_16297-2987-4685",
+            "ibmcld_11432-0-1176"
+          ]
+        },
+        {
+          "task_id": "2f65d1793bb804e91c4abdab04897128<::>2",
+          "before_recall": 0.5,
+          "after_recall": 0.5,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_13330-7-2313",
+            "ibmcld_13393-7-2051",
+            "ibmcld_13396-7-2171",
+            "ibmcld_13398-7-1875",
+            "ibmcld_13386-7-2217"
+          ],
+          "after_ranking": [
+            "ibmcld_13330-7-2313",
+            "ibmcld_13396-7-2171",
+            "ibmcld_13393-7-2051",
+            "ibmcld_13386-7-2217",
+            "ibmcld_13398-7-1875"
+          ]
+        },
+        {
+          "task_id": "33720e2cc99d142aa6cec9c6ef451d04<::>6",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_16707-7-1749",
+            "ibmcld_16706-7-1805",
+            "ibmcld_16705-1462-3096",
+            "ibmcld_15134-9304-10981",
+            "ibmcld_00665-11411-13104"
+          ],
+          "after_ranking": [
+            "ibmcld_16707-7-1749",
+            "ibmcld_16705-1462-3096",
+            "ibmcld_16706-7-1805",
+            "ibmcld_16151-7-2151",
+            "ibmcld_15134-9304-10981"
+          ]
+        },
+        {
+          "task_id": "33b1d49258135e39c24ad3dada20a344<::>8",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_14919-0-470",
+            "ibmcld_05506-7-2066",
+            "ibmcld_09205-7-1576",
+            "ibmcld_07443-4-1809",
+            "ibmcld_07654-1930-4261"
+          ],
+          "after_ranking": [
+            "ibmcld_14919-0-470",
+            "ibmcld_09205-7-1576",
+            "ibmcld_05506-7-2066",
+            "ibmcld_07443-4-1809",
+            "ibmcld_14532-7-2371"
+          ]
+        },
+        {
+          "task_id": "3447764eb20d196afb6101ceca54c9ca<::>3",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_13802-2278-4278",
+            "ibmcld_13741-7-1934",
+            "ibmcld_13432-1758-3615",
+            "ibmcld_13337-1430-3237",
+            "ibmcld_07578-61136-62851"
+          ],
+          "after_ranking": [
+            "ibmcld_13741-7-1934",
+            "ibmcld_13802-2278-4278",
+            "ibmcld_07578-61136-62851",
+            "ibmcld_13337-1430-3237",
+            "ibmcld_13432-1758-3615"
+          ]
+        },
+        {
+          "task_id": "34b3bf5c802cb116991aeab51576d984<::>2",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_06587-4-1457",
+            "ibmcld_06588-0-1862",
+            "ibmcld_06587-1202-2740",
+            "ibmcld_06586-2859-4211",
+            "ibmcld_06478-4947-6640"
+          ],
+          "after_ranking": [
+            "ibmcld_06587-4-1457",
+            "ibmcld_06588-0-1862",
+            "ibmcld_06587-1202-2740",
+            "ibmcld_06586-2859-4211",
+            "ibmcld_06478-4947-6640"
+          ]
+        },
+        {
+          "task_id": "34e13a1a5db044c0c8b801dcbd0911ac<::>5",
+          "before_recall": 0.2,
+          "after_recall": 0.2,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_11421-4504-6245",
+            "ibmcld_11421-7050-8679",
+            "ibmcld_11421-11255-12536",
+            "ibmcld_11421-3438-4946",
+            "ibmcld_11342-8090-9883"
+          ],
+          "after_ranking": [
+            "ibmcld_11421-4504-6245",
+            "ibmcld_11421-7050-8679",
+            "ibmcld_11421-11255-12536",
+            "ibmcld_11421-3438-4946",
+            "ibmcld_11421-7-1608"
+          ]
+        },
+        {
+          "task_id": "364e7215e4db5d7786d1c1e559137077<::>8",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_03806-7-1773",
+            "ibmcld_03819-7-1773",
+            "ibmcld_03883-7-1773",
+            "ibmcld_04066-7-1773",
+            "ibmcld_04041-7-1874"
+          ],
+          "after_ranking": [
+            "ibmcld_03806-7-1773",
+            "ibmcld_03819-7-1773",
+            "ibmcld_03883-7-1773",
+            "ibmcld_04066-7-1773",
+            "ibmcld_04041-7-1874"
+          ]
+        },
+        {
+          "task_id": "378b9c8fa2b9e8d571160d52f8392ede<::>2",
+          "before_recall": 0.2857142857142857,
+          "after_recall": 0.14285714285714285,
+          "recall_delta": -0.14285714285714285,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_02586-7299-9109",
+            "ibmcld_09087-32628-34531",
+            "ibmcld_04996-7-2041",
+            "ibmcld_11722-6298-8241",
+            "ibmcld_15559-1526-3315"
+          ],
+          "after_ranking": [
+            "ibmcld_02586-7299-9109",
+            "ibmcld_09087-32628-34531",
+            "ibmcld_04996-7-2041",
+            "ibmcld_15559-1526-3315",
+            "ibmcld_02586-15452-17185"
+          ]
+        },
+        {
+          "task_id": "38d11f48b3b4f613559ba2de1b2b8668<::>2",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_13761-7-2364",
+            "ibmcld_13673-5433-7481",
+            "ibmcld_07578-59953-61627",
+            "ibmcld_16727-59938-61612",
+            "ibmcld_13785-6778-8202"
+          ],
+          "after_ranking": [
+            "ibmcld_13761-7-2364",
+            "ibmcld_13673-5433-7481",
+            "ibmcld_07578-59953-61627",
+            "ibmcld_16727-59938-61612",
+            "ibmcld_13785-6778-8202"
+          ]
+        },
+        {
+          "task_id": "3a0ca1588140a5abfabb6cde657788f1<::>3",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_01392-0-938",
+            "ibmcld_05272-4123-6051",
+            "ibmcld_05256-4607-6708",
+            "ibmcld_04340-20869-22605",
+            "ibmcld_01415-7-1809"
+          ],
+          "after_ranking": [
+            "ibmcld_01392-0-938",
+            "ibmcld_05272-4123-6051",
+            "ibmcld_05256-4607-6708",
+            "ibmcld_04340-20869-22605",
+            "ibmcld_01415-7-1809"
+          ]
+        },
+        {
+          "task_id": "3ba28d8900b0cd4fb387c8c5f089a619<::>5",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_03590-4-1800",
+            "ibmcld_03591-4-1939",
+            "ibmcld_14886-3446-5485",
+            "ibmcld_03578-7-2257",
+            "ibmcld_14886-1801-3922"
+          ],
+          "after_ranking": [
+            "ibmcld_03590-4-1800",
+            "ibmcld_03591-4-1939",
+            "ibmcld_14886-3446-5485",
+            "ibmcld_14886-1801-3922",
+            "ibmcld_03578-7-2257"
+          ]
+        },
+        {
+          "task_id": "3d15fe66c806587369466de2beaba6f2<::>8",
+          "before_recall": 0.5,
+          "after_recall": 0.5,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_07625-7-2533",
+            "ibmcld_11148-7-2284",
+            "ibmcld_07915-7-2374",
+            "ibmcld_07578-1223068-1225369",
+            "ibmcld_16727-1225701-1228002"
+          ],
+          "after_ranking": [
+            "ibmcld_07625-7-2533",
+            "ibmcld_11148-7-2284",
+            "ibmcld_07915-7-2374",
+            "ibmcld_07578-1223068-1225369",
+            "ibmcld_16727-1225701-1228002"
+          ]
+        },
+        {
+          "task_id": "4415d96c50e2366ed95d3b5a5b1da689<::>2",
+          "before_recall": 1.0,
+          "after_recall": 0.75,
+          "recall_delta": -0.25,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_13629-7578-9236",
+            "ibmcld_13266-5294-6942",
+            "ibmcld_13629-6251-7976",
+            "ibmcld_13724-59163-60760",
+            "ibmcld_13285-4698-6700"
+          ],
+          "after_ranking": [
+            "ibmcld_13629-7578-9236",
+            "ibmcld_13266-5294-6942",
+            "ibmcld_13629-6251-7976",
+            "ibmcld_07098-17286-19445",
+            "ibmcld_13724-59163-60760"
+          ]
+        },
+        {
+          "task_id": "4ead9b33e49bcf239faffb701eff5b04<::>5",
+          "before_recall": 0.2,
+          "after_recall": 0.2,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_12727-0-1580",
+            "ibmcld_09154-7-2366",
+            "ibmcld_09154-3609-5513",
+            "ibmcld_09154-1852-4006",
+            "ibmcld_06104-3423-5552"
+          ],
+          "after_ranking": [
+            "ibmcld_12727-0-1580",
+            "ibmcld_09154-7-2366",
+            "ibmcld_09154-3609-5513",
+            "ibmcld_06104-3423-5552",
+            "ibmcld_09154-1852-4006"
+          ]
+        },
+        {
+          "task_id": "502558084fc970ca8c4d81f5bb474f7b<::>3",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_07232-35629-36588",
+            "ibmcld_00479-1759-3415",
+            "ibmcld_00479-7-2264",
+            "ibmcld_14306-7706-10258",
+            "ibmcld_01145-945-3321"
+          ],
+          "after_ranking": [
+            "ibmcld_07232-35629-36588",
+            "ibmcld_00479-1759-3415",
+            "ibmcld_00479-7-2264",
+            "ibmcld_14306-7706-10258",
+            "ibmcld_01145-945-3321"
+          ]
+        },
+        {
+          "task_id": "51c078e737f3ddcc2054383f7f9d054d<::>2",
+          "before_recall": 0.5,
+          "after_recall": 0.5,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_10371-1594-3709",
+            "ibmcld_05986-1597-3901",
+            "ibmcld_05986-8670-10393",
+            "ibmcld_10371-10009-11944",
+            "ibmcld_10371-7-1999"
+          ],
+          "after_ranking": [
+            "ibmcld_10371-1594-3709",
+            "ibmcld_05986-1597-3901",
+            "ibmcld_05986-8670-10393",
+            "ibmcld_10371-10009-11944",
+            "ibmcld_10371-7469-9092"
+          ]
+        },
+        {
+          "task_id": "54e0d90032ad6d44122ba4c31cb1c375<::>2",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_12154-5718-7347",
+            "ibmcld_11648-3295-5406",
+            "ibmcld_16029-19600-21343",
+            "ibmcld_11569-3102-5065",
+            "ibmcld_11974-3588-5118"
+          ],
+          "after_ranking": [
+            "ibmcld_12154-5718-7347",
+            "ibmcld_11648-3295-5406",
+            "ibmcld_11569-3102-5065",
+            "ibmcld_16029-19600-21343",
+            "ibmcld_12201-2620-4050"
+          ]
+        },
+        {
+          "task_id": "59400aeaa3a18f2077a5d7f64429ccc0<::>5",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_07578-59953-61627",
+            "ibmcld_16727-59938-61612",
+            "ibmcld_13706-1495-3144",
+            "ibmcld_13785-7731-9648",
+            "ibmcld_13741-1529-3393"
+          ],
+          "after_ranking": [
+            "ibmcld_07578-59953-61627",
+            "ibmcld_16727-59938-61612",
+            "ibmcld_13706-1495-3144",
+            "ibmcld_13785-7731-9648",
+            "ibmcld_13741-1529-3393"
+          ]
+        },
+        {
+          "task_id": "5989c7715ee905992c8b1628e409713b<::>3",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_14537-7-2256",
+            "ibmcld_14546-1313-3289",
+            "ibmcld_14546-7-1993",
+            "ibmcld_01129-1692-3890",
+            "ibmcld_14537-1681-3861"
+          ],
+          "after_ranking": [
+            "ibmcld_14537-7-2256",
+            "ibmcld_14546-1313-3289",
+            "ibmcld_14546-7-1993",
+            "ibmcld_14537-1681-3861",
+            "ibmcld_01129-1692-3890"
+          ]
+        },
+        {
+          "task_id": "5b2fea5eaa74274022c2b5ccba168338<::>3",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_07507-7174-9217",
+            "ibmcld_16456-4877-7122",
+            "ibmcld_16530-4877-7122",
+            "ibmcld_07578-456575-458558",
+            "ibmcld_16727-456557-458540"
+          ],
+          "after_ranking": [
+            "ibmcld_16456-4877-7122",
+            "ibmcld_07507-7174-9217",
+            "ibmcld_16530-4877-7122",
+            "ibmcld_07578-456575-458558",
+            "ibmcld_16727-456557-458540"
+          ]
+        },
+        {
+          "task_id": "5bda1629d209194d02bd50b0a7926720<::>5",
+          "before_recall": 0.3333333333333333,
+          "after_recall": 0.3333333333333333,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_07565-7-1891",
+            "ibmcld_07232-3248-5115",
+            "ibmcld_08871-19662-20877",
+            "ibmcld_08871-35382-36299",
+            "ibmcld_03403-24194-25608"
+          ],
+          "after_ranking": [
+            "ibmcld_07565-7-1891",
+            "ibmcld_07232-3248-5115",
+            "ibmcld_08871-19662-20877",
+            "ibmcld_03403-24194-25608",
+            "ibmcld_08871-35382-36299"
+          ]
+        },
+        {
+          "task_id": "5f51aeba2faf9b75d89d66c417a43540<::>3",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_02914-5621-7418",
+            "ibmcld_02914-2824-4863",
+            "ibmcld_03233-2960-4877",
+            "ibmcld_02914-4552-6143",
+            "ibmcld_16262-7-2107"
+          ],
+          "after_ranking": [
+            "ibmcld_02914-5621-7418",
+            "ibmcld_02914-2824-4863",
+            "ibmcld_03233-2960-4877",
+            "ibmcld_02914-4552-6143",
+            "ibmcld_16262-7-2107"
+          ]
+        },
+        {
+          "task_id": "62006c775913c3f998b4537c5252d448<::>5",
+          "before_recall": 0.3333333333333333,
+          "after_recall": 0.3333333333333333,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_10886-7-2286",
+            "ibmcld_03682-0-526",
+            "ibmcld_11602-17406-18830",
+            "ibmcld_15139-4193-6217",
+            "ibmcld_08579-1388-3487"
+          ],
+          "after_ranking": [
+            "ibmcld_10886-7-2286",
+            "ibmcld_03682-0-526",
+            "ibmcld_11602-17406-18830",
+            "ibmcld_08579-1388-3487",
+            "ibmcld_08579-2977-4999"
+          ]
+        },
+        {
+          "task_id": "6a618ed660ae299ab1ce599e600214c1<::>5",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_15758-3961-6028",
+            "ibmcld_14857-1329-2801",
+            "ibmcld_15500-2999-4954",
+            "ibmcld_15646-2393-4239",
+            "ibmcld_15647-2393-4239"
+          ],
+          "after_ranking": [
+            "ibmcld_15758-3961-6028",
+            "ibmcld_14857-1329-2801",
+            "ibmcld_15646-2393-4239",
+            "ibmcld_15500-2999-4954",
+            "ibmcld_15647-2393-4239"
+          ]
+        },
+        {
+          "task_id": "6bcefa839b6abb1894cede770cf3841c<::>2",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_00620-8515-9974",
+            "ibmcld_02578-7-2166",
+            "ibmcld_02578-1633-3881",
+            "ibmcld_12342-0-403",
+            "ibmcld_02578-5076-7405"
+          ],
+          "after_ranking": [
+            "ibmcld_00620-8515-9974",
+            "ibmcld_02578-7-2166",
+            "ibmcld_02578-1633-3881",
+            "ibmcld_12342-0-403",
+            "ibmcld_02578-5076-7405"
+          ]
+        },
+        {
+          "task_id": "6d851f72ecd1562baa1736dc61663ecd<::>7",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_15055-7-1909",
+            "ibmcld_14886-3446-5485",
+            "ibmcld_14886-7-2264",
+            "ibmcld_15054-7-2006",
+            "ibmcld_15762-2449-3000"
+          ],
+          "after_ranking": [
+            "ibmcld_15055-7-1909",
+            "ibmcld_14886-3446-5485",
+            "ibmcld_14886-7-2264",
+            "ibmcld_15054-7-2006",
+            "ibmcld_15762-2449-3000"
+          ]
+        },
+        {
+          "task_id": "6f4948e46e16bf17a090faf7fa1296db<::>8",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_02064-19360-21288",
+            "ibmcld_07578-1112716-1114706",
+            "ibmcld_16727-1115197-1117187",
+            "ibmcld_07578-1111048-1113137",
+            "ibmcld_16727-1113529-1115618"
+          ],
+          "after_ranking": [
+            "ibmcld_02064-19360-21288",
+            "ibmcld_07578-1112716-1114706",
+            "ibmcld_16727-1115197-1117187",
+            "ibmcld_07578-1111048-1113137",
+            "ibmcld_02064-17718-19825"
+          ]
+        },
+        {
+          "task_id": "70132d7b11d9c45c97e82d6017042333<::>6",
+          "before_recall": 0.5,
+          "after_recall": 0.5,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_04179-3022-5112",
+            "ibmcld_04145-7853-9868",
+            "ibmcld_04217-0-672",
+            "ibmcld_16727-762858-764944",
+            "ibmcld_07578-762115-764173"
+          ],
+          "after_ranking": [
+            "ibmcld_04179-3022-5112",
+            "ibmcld_04145-7853-9868",
+            "ibmcld_04217-0-672",
+            "ibmcld_16727-762858-764944",
+            "ibmcld_07578-762115-764173"
+          ]
+        },
+        {
+          "task_id": "723c8555cc0f8f94960ae7dca81a4b48<::>8",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_13074-7-2122",
+            "ibmcld_00678-7-2409",
+            "ibmcld_12532-7-2400",
+            "ibmcld_07715-3225-5542",
+            "ibmcld_04519-57083-58582"
+          ],
+          "after_ranking": [
+            "ibmcld_13074-7-2122",
+            "ibmcld_00678-7-2409",
+            "ibmcld_12532-7-2400",
+            "ibmcld_14098-27379-29323",
+            "ibmcld_07715-3225-5542"
+          ]
+        },
+        {
+          "task_id": "76d98d2dd66bf456ec089bdc953df597<::>6",
+          "before_recall": 0.6666666666666666,
+          "after_recall": 0.6666666666666666,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_07578-869154-870950",
+            "ibmcld_16727-869031-870827",
+            "ibmcld_07578-870539-872312",
+            "ibmcld_16727-870416-872189",
+            "ibmcld_15034-2624-4469"
+          ],
+          "after_ranking": [
+            "ibmcld_07578-869154-870950",
+            "ibmcld_07578-870539-872312",
+            "ibmcld_16727-869031-870827",
+            "ibmcld_16727-870416-872189",
+            "ibmcld_15034-2624-4469"
+          ]
+        },
+        {
+          "task_id": "7b64ec5133758d91fe5beead2f8c8f81<::>1",
+          "before_recall": 0.6666666666666666,
+          "after_recall": 0.6666666666666666,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_13785-16063-17932",
+            "ibmcld_13673-7-1724",
+            "ibmcld_13754-7-1995",
+            "ibmcld_13673-11358-13288",
+            "ibmcld_13724-40539-42383"
+          ],
+          "after_ranking": [
+            "ibmcld_13673-7-1724",
+            "ibmcld_13785-16063-17932",
+            "ibmcld_13754-7-1995",
+            "ibmcld_13673-11358-13288",
+            "ibmcld_13724-40539-42383"
+          ]
+        },
+        {
+          "task_id": "7ebca416d6620df57addad25a27f2ce4<::>2",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_15660-6165-7009",
+            "ibmcld_10851-7634-8312",
+            "ibmcld_05442-14957-16667",
+            "ibmcld_02577-3499-5823",
+            "ibmcld_15077-3808-5103"
+          ],
+          "after_ranking": [
+            "ibmcld_15660-6165-7009",
+            "ibmcld_10851-7634-8312",
+            "ibmcld_05442-14957-16667",
+            "ibmcld_15077-3808-5103",
+            "ibmcld_02577-3499-5823"
+          ]
+        },
+        {
+          "task_id": "7fb8a98eab338f4d3c6db074709e78f3<::>3",
+          "before_recall": 0.5,
+          "after_recall": 0.5,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_16004-7283-8566",
+            "ibmcld_15569-7766-9329",
+            "ibmcld_16004-2814-4819",
+            "ibmcld_16004-5707-7628",
+            "ibmcld_15561-7-2436"
+          ],
+          "after_ranking": [
+            "ibmcld_16004-7283-8566",
+            "ibmcld_16004-2814-4819",
+            "ibmcld_15569-7766-9329",
+            "ibmcld_16004-5707-7628",
+            "ibmcld_16004-8412-10054"
+          ]
+        },
+        {
+          "task_id": "829ec96a6099f5dd63f96ea6e639d921<::>4",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_01660-5613-7501",
+            "ibmcld_01705-2818-4572",
+            "ibmcld_01705-4111-6013",
+            "ibmcld_07578-1074123-1075869",
+            "ibmcld_16727-1076619-1078365"
+          ],
+          "after_ranking": [
+            "ibmcld_01660-5613-7501",
+            "ibmcld_01705-2818-4572",
+            "ibmcld_07578-1074123-1075869",
+            "ibmcld_01705-4111-6013",
+            "ibmcld_16727-1076619-1078365"
+          ]
+        },
+        {
+          "task_id": "83067f7ca3c4471dceee7114cb03dcb6<::>3",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_06004-2655-4279",
+            "ibmcld_10439-2616-4596",
+            "ibmcld_06472-9194-10955",
+            "ibmcld_12532-7-2400",
+            "ibmcld_06726-8970-10659"
+          ],
+          "after_ranking": [
+            "ibmcld_06004-2655-4279",
+            "ibmcld_10439-2616-4596",
+            "ibmcld_06472-9194-10955",
+            "ibmcld_12532-7-2400",
+            "ibmcld_06726-8970-10659"
+          ]
+        },
+        {
+          "task_id": "845feaacbf245d4d66d5bdc54489f216<::>6",
+          "before_recall": 0.3333333333333333,
+          "after_recall": 0.3333333333333333,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_02965-7-2066",
+            "ibmcld_02872-5776-7747",
+            "ibmcld_03286-4-2039",
+            "ibmcld_02872-3962-5187",
+            "ibmcld_02872-7-1746"
+          ],
+          "after_ranking": [
+            "ibmcld_02965-7-2066",
+            "ibmcld_02872-5776-7747",
+            "ibmcld_03286-4-2039",
+            "ibmcld_02872-3962-5187",
+            "ibmcld_02872-7-1746"
+          ]
+        },
+        {
+          "task_id": "86a39a57b8c58d76524f979bb7da7d02<::>2",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_04145-7-2180",
+            "ibmcld_16727-754871-756890",
+            "ibmcld_01705-2818-4572",
+            "ibmcld_16666-7-1960",
+            "ibmcld_01660-5613-7501"
+          ],
+          "after_ranking": [
+            "ibmcld_04145-7-2180",
+            "ibmcld_16727-754871-756890",
+            "ibmcld_16666-7-1960",
+            "ibmcld_01705-2818-4572",
+            "ibmcld_01660-5613-7501"
+          ]
+        },
+        {
+          "task_id": "8c64105baa800a3049fbeee4e47cb61e<::>2",
+          "before_recall": 0.4,
+          "after_recall": 0.4,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_09297-9597-11282",
+            "ibmcld_08097-7-2064",
+            "ibmcld_07513-0-2216",
+            "ibmcld_07529-7-2083",
+            "ibmcld_16729-150352-152069"
+          ],
+          "after_ranking": [
+            "ibmcld_09297-9597-11282",
+            "ibmcld_07513-0-2216",
+            "ibmcld_08097-7-2064",
+            "ibmcld_07529-7-2083",
+            "ibmcld_07571-9175-11073"
+          ]
+        },
+        {
+          "task_id": "938091834acea007bcc657be70d4e6c1<::>4",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_04145-13524-14251",
+            "ibmcld_07578-767873-769780",
+            "ibmcld_04126-7-1694",
+            "ibmcld_04114-3937-5977",
+            "ibmcld_04168-1-1402"
+          ],
+          "after_ranking": [
+            "ibmcld_04145-13524-14251",
+            "ibmcld_07578-767873-769780",
+            "ibmcld_04126-7-1694",
+            "ibmcld_04114-3937-5977",
+            "ibmcld_04168-2157-3477"
+          ]
+        },
+        {
+          "task_id": "96bdf7a5d06c7c027a5bf205a4f0d945<::>7",
+          "before_recall": 0.5,
+          "after_recall": 0.5,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_13108-1568-3572",
+            "ibmcld_09088-4650-6851",
+            "ibmcld_09081-7-2309",
+            "ibmcld_07578-1205339-1207242",
+            "ibmcld_16727-1207972-1209875"
+          ],
+          "after_ranking": [
+            "ibmcld_13108-1568-3572",
+            "ibmcld_09081-7-2309",
+            "ibmcld_09088-4650-6851",
+            "ibmcld_07578-1205339-1207242",
+            "ibmcld_16727-1207972-1209875"
+          ]
+        },
+        {
+          "task_id": "97aece816016b6fbd6a25c04805a7f5f<::>1",
+          "before_recall": 0.4,
+          "after_recall": 0.4,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_04335-156685-158309",
+            "ibmcld_05278-188144-189768",
+            "ibmcld_04335-167331-168941",
+            "ibmcld_05380-7-1924",
+            "ibmcld_05380-2779-4533"
+          ],
+          "after_ranking": [
+            "ibmcld_04335-156685-158309",
+            "ibmcld_05278-188144-189768",
+            "ibmcld_05380-7-1924",
+            "ibmcld_05380-2779-4533",
+            "ibmcld_04335-167331-168941"
+          ]
+        },
+        {
+          "task_id": "98f69b09b07f63bd70e90e85ed8a24e9<::>4",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_13603-7-2457",
+            "ibmcld_16727-762858-764944",
+            "ibmcld_09513-13971-16006",
+            "ibmcld_04107-7548-9466",
+            "ibmcld_04145-7853-9868"
+          ],
+          "after_ranking": [
+            "ibmcld_13603-7-2457",
+            "ibmcld_16727-762858-764944",
+            "ibmcld_04145-7853-9868",
+            "ibmcld_09513-13971-16006",
+            "ibmcld_04107-7548-9466"
+          ]
+        },
+        {
+          "task_id": "995ef582d294f5ff415f7856ef1cb888<::>2",
+          "before_recall": 0.4,
+          "after_recall": 0.4,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_13430-82005-83949",
+            "ibmcld_13398-2762-4632",
+            "ibmcld_13309-20717-22365",
+            "ibmcld_13301-28716-30771",
+            "ibmcld_13301-27295-29215"
+          ],
+          "after_ranking": [
+            "ibmcld_13430-82005-83949",
+            "ibmcld_13398-2762-4632",
+            "ibmcld_13301-28716-30771",
+            "ibmcld_13309-20717-22365",
+            "ibmcld_13301-27295-29215"
+          ]
+        },
+        {
+          "task_id": "9975dc096810f251082feb42cfacb5d5<::>9",
+          "before_recall": 0.4,
+          "after_recall": 0.4,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_05173-7-1470",
+            "ibmcld_05174-7-1470",
+            "ibmcld_10406-7-2054",
+            "ibmcld_05215-7-2428",
+            "ibmcld_03040-27724-29594"
+          ],
+          "after_ranking": [
+            "ibmcld_05173-7-1470",
+            "ibmcld_05174-7-1470",
+            "ibmcld_10406-7-2054",
+            "ibmcld_05215-7-2428",
+            "ibmcld_03040-27724-29594"
+          ]
+        },
+        {
+          "task_id": "a8253832f3266d0223f273cde47b9939<::>2",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_12623-7-2328",
+            "ibmcld_03749-7-2169",
+            "ibmcld_12559-7-2119",
+            "ibmcld_07578-1131400-1133341",
+            "ibmcld_12559-1521-3753"
+          ],
+          "after_ranking": [
+            "ibmcld_12623-7-2328",
+            "ibmcld_03749-7-2169",
+            "ibmcld_12559-7-2119",
+            "ibmcld_12559-1521-3753",
+            "ibmcld_07578-1131400-1133341"
+          ]
+        },
+        {
+          "task_id": "aa06ae124e0fe341dcfaebf948a1aaf2<::>4",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_07578-806120-808288",
+            "ibmcld_16727-805993-808161",
+            "ibmcld_07289-1587-3853",
+            "ibmcld_07578-807740-809746",
+            "ibmcld_16727-807613-809619"
+          ],
+          "after_ranking": [
+            "ibmcld_07578-806120-808288",
+            "ibmcld_16727-805993-808161",
+            "ibmcld_07289-1587-3853",
+            "ibmcld_07578-807740-809746",
+            "ibmcld_16727-807613-809619"
+          ]
+        },
+        {
+          "task_id": "aaf50bd9946dd84f5e78ae383aebd089<::>5",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_00404-5279-6843",
+            "ibmcld_00404-1386-2941",
+            "ibmcld_00404-3795-5683",
+            "ibmcld_00404-7-1764",
+            "ibmcld_00404-2650-4047"
+          ],
+          "after_ranking": [
+            "ibmcld_00404-5279-6843",
+            "ibmcld_00404-1386-2941",
+            "ibmcld_00404-3795-5683",
+            "ibmcld_00404-7-1764",
+            "ibmcld_00404-2650-4047"
+          ]
+        },
+        {
+          "task_id": "ac2ef0404f3861d1f464475a1dc89279<::>5",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_00089-0-1590",
+            "ibmcld_13503-7-1174",
+            "ibmcld_13505-7-2059",
+            "ibmcld_00091-2173-4117",
+            "ibmcld_00100-7-1488"
+          ],
+          "after_ranking": [
+            "ibmcld_00089-0-1590",
+            "ibmcld_13503-7-1174",
+            "ibmcld_13505-7-2059",
+            "ibmcld_00091-2173-4117",
+            "ibmcld_00091-7-1415"
+          ]
+        },
+        {
+          "task_id": "ad958d9dac850a8776f85d2327a4d3b2<::>2",
+          "before_recall": 0.0,
+          "after_recall": 1.0,
+          "recall_delta": 1.0,
+          "before_hit": false,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_11909-7-1553",
+            "ibmcld_06160-7-2098",
+            "ibmcld_10619-1701-3500",
+            "ibmcld_05882-10717-12364",
+            "ibmcld_10624-0-1683"
+          ],
+          "after_ranking": [
+            "ibmcld_11909-7-1553",
+            "ibmcld_06160-7-2098",
+            "ibmcld_10619-1701-3500",
+            "ibmcld_05882-10717-12364",
+            "ibmcld_15261-1802-3804"
+          ]
+        },
+        {
+          "task_id": "b3b321e9ea81d1d90e528f85fff72d63<::>8",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_05430-7-1528",
+            "ibmcld_05012-1659-3606",
+            "ibmcld_07578-1317300-1319204",
+            "ibmcld_16727-1319965-1321869",
+            "ibmcld_05171-11543-12350"
+          ],
+          "after_ranking": [
+            "ibmcld_05430-7-1528",
+            "ibmcld_07578-1317300-1319204",
+            "ibmcld_05012-1659-3606",
+            "ibmcld_05171-11543-12350",
+            "ibmcld_16727-1319965-1321869"
+          ]
+        },
+        {
+          "task_id": "b605b0943842aabc98491e74cbe05a8a<::>4",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_13182-14952-16247",
+            "ibmcld_14269-0-2018",
+            "ibmcld_14270-0-2244",
+            "ibmcld_13189-7461-9395",
+            "ibmcld_04758-5734-7419"
+          ],
+          "after_ranking": [
+            "ibmcld_14269-0-2018",
+            "ibmcld_13182-14952-16247",
+            "ibmcld_14270-0-2244",
+            "ibmcld_13189-7461-9395",
+            "ibmcld_04758-5734-7419"
+          ]
+        },
+        {
+          "task_id": "b97a2b7f509c5e21ca6ee401b76896b4<::>4",
+          "before_recall": 0.6666666666666666,
+          "after_recall": 0.6666666666666666,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_11618-7-2125",
+            "ibmcld_11618-3345-5392",
+            "ibmcld_11571-7-2488",
+            "ibmcld_11659-7-1974",
+            "ibmcld_11618-1698-3852"
+          ],
+          "after_ranking": [
+            "ibmcld_11618-7-2125",
+            "ibmcld_11618-3345-5392",
+            "ibmcld_11571-7-2488",
+            "ibmcld_11659-7-1974",
+            "ibmcld_11618-1698-3852"
+          ]
+        },
+        {
+          "task_id": "c359d515f4e49833a10623e0287ec224<::>1",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_05125-7-1702",
+            "ibmcld_06098-5065-6465",
+            "ibmcld_10539-5046-6446",
+            "ibmcld_04768-1379-3327",
+            "ibmcld_05125-2385-3946"
+          ],
+          "after_ranking": [
+            "ibmcld_05125-7-1702",
+            "ibmcld_06098-5065-6465",
+            "ibmcld_10539-5046-6446",
+            "ibmcld_05125-2385-3946",
+            "ibmcld_04768-1379-3327"
+          ]
+        },
+        {
+          "task_id": "c5df4eb0d83a9adf60c49bce924946b1<::>9",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_12385-7-2295",
+            "ibmcld_12465-4-1958",
+            "ibmcld_12525-3466-5667",
+            "ibmcld_12385-1815-3858",
+            "ibmcld_12465-1459-3183"
+          ],
+          "after_ranking": [
+            "ibmcld_12385-7-2295",
+            "ibmcld_12465-4-1958",
+            "ibmcld_12525-3466-5667",
+            "ibmcld_12385-1815-3858",
+            "ibmcld_12417-2921-4069"
+          ]
+        },
+        {
+          "task_id": "caa82c67bf03df6c2c509fd5ca13b4be<::>6",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_09337-7-2032",
+            "ibmcld_02427-7-2053",
+            "ibmcld_05090-7-1894",
+            "ibmcld_02427-1586-3540",
+            "ibmcld_09337-1565-3508"
+          ],
+          "after_ranking": [
+            "ibmcld_09337-7-2032",
+            "ibmcld_02427-7-2053",
+            "ibmcld_05090-7-1894",
+            "ibmcld_02427-1586-3540",
+            "ibmcld_09337-1565-3508"
+          ]
+        },
+        {
+          "task_id": "cdc94637308f906fad88958f239da379<::>2",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_00519-4108-5919",
+            "ibmcld_00519-16297-17767",
+            "ibmcld_00580-1498-3630",
+            "ibmcld_00576-7-1946",
+            "ibmcld_00576-1572-3411"
+          ],
+          "after_ranking": [
+            "ibmcld_00519-4108-5919",
+            "ibmcld_00519-16297-17767",
+            "ibmcld_00580-1498-3630",
+            "ibmcld_00576-1572-3411",
+            "ibmcld_00576-7-1946"
+          ]
+        },
+        {
+          "task_id": "d368783a56868b6cc7ba373b4ae969a2<::>9",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_13498-115831-117736",
+            "ibmcld_02588-1038-2911",
+            "ibmcld_02588-2397-4444",
+            "ibmcld_07760-2118-3828",
+            "ibmcld_03982-23825-32037"
+          ],
+          "after_ranking": [
+            "ibmcld_13498-115831-117736",
+            "ibmcld_02588-1038-2911",
+            "ibmcld_07760-2118-3828",
+            "ibmcld_02588-2397-4444",
+            "ibmcld_03982-23825-32037"
+          ]
+        },
+        {
+          "task_id": "d5a265db8d3c5be296fa0dd270087033<::>2",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_11149-7-2279",
+            "ibmcld_12552-7-1847",
+            "ibmcld_11567-0-1437",
+            "ibmcld_11617-7-2212",
+            "ibmcld_07578-1131400-1133341"
+          ],
+          "after_ranking": [
+            "ibmcld_11149-7-2279",
+            "ibmcld_12552-7-1847",
+            "ibmcld_11617-7-2212",
+            "ibmcld_11567-0-1437",
+            "ibmcld_07578-1131400-1133341"
+          ]
+        },
+        {
+          "task_id": "d99477ecf6d1d33e72be6d84813811e3<::>1",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_11594-11340-13004",
+            "ibmcld_11653-7-2158",
+            "ibmcld_11594-12650-14517",
+            "ibmcld_11650-3394-5102",
+            "ibmcld_11653-3123-5171"
+          ],
+          "after_ranking": [
+            "ibmcld_11594-11340-13004",
+            "ibmcld_11594-12650-14517",
+            "ibmcld_11653-7-2158",
+            "ibmcld_11650-3394-5102",
+            "ibmcld_11653-3123-5171"
+          ]
+        },
+        {
+          "task_id": "dc8b8152a20577b5e1b2d2e470fce330<::>4",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_04831-41023-42726",
+            "ibmcld_04991-40995-42698",
+            "ibmcld_05007-5522-7647",
+            "ibmcld_01329-34426-36149",
+            "ibmcld_01512-0-1539"
+          ],
+          "after_ranking": [
+            "ibmcld_04831-41023-42726",
+            "ibmcld_04991-40995-42698",
+            "ibmcld_05007-5522-7647",
+            "ibmcld_05007-7207-8688",
+            "ibmcld_01329-34426-36149"
+          ]
+        },
+        {
+          "task_id": "e0e1bb82aa8906246e0619d180b9b83b<::>5",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_00637-1595-3191",
+            "ibmcld_16729-109879-111703",
+            "ibmcld_00635-4159-6183",
+            "ibmcld_00483-3212-4996",
+            "ibmcld_00610-7-2079"
+          ],
+          "after_ranking": [
+            "ibmcld_00637-1595-3191",
+            "ibmcld_16729-109879-111703",
+            "ibmcld_00635-4159-6183",
+            "ibmcld_00483-3212-4996",
+            "ibmcld_00636-7-2113"
+          ]
+        },
+        {
+          "task_id": "e1713cea8258568a80688606b48e5675<::>7",
+          "before_recall": 0.2,
+          "after_recall": 0.2,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_03010-7-2157",
+            "ibmcld_03334-4-1943",
+            "ibmcld_07578-2720-4792",
+            "ibmcld_16727-2720-4792",
+            "ibmcld_02970-25823-27514"
+          ],
+          "after_ranking": [
+            "ibmcld_03010-7-2157",
+            "ibmcld_03334-4-1943",
+            "ibmcld_07578-2720-4792",
+            "ibmcld_02970-25823-27514",
+            "ibmcld_16727-2720-4792"
+          ]
+        },
+        {
+          "task_id": "e422b7d0da1418285714f0bf0a9f15c9<::>2",
+          "before_recall": 1.0,
+          "after_recall": 1.0,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_10808-1304-3088",
+            "ibmcld_10808-7-1711",
+            "ibmcld_10808-2692-4465",
+            "ibmcld_10808-4078-5731",
+            "ibmcld_10808-6618-8378"
+          ],
+          "after_ranking": [
+            "ibmcld_10808-1304-3088",
+            "ibmcld_10808-7-1711",
+            "ibmcld_10808-2692-4465",
+            "ibmcld_10808-4078-5731",
+            "ibmcld_10808-6618-8378"
+          ]
+        },
+        {
+          "task_id": "e672c9396a15db3da8f27a2a4e476292<::>3",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_08483-3512-5294",
+            "ibmcld_04353-69451-70815",
+            "ibmcld_08565-4180-5993",
+            "ibmcld_08430-4-1880",
+            "ibmcld_08425-69459-70625"
+          ],
+          "after_ranking": [
+            "ibmcld_08483-3512-5294",
+            "ibmcld_04353-69451-70815",
+            "ibmcld_08430-4-1880",
+            "ibmcld_08565-4180-5993",
+            "ibmcld_07578-1183252-1185036"
+          ]
+        },
+        {
+          "task_id": "efd7ad3060f67b92cd2246a3129fd494<::>6",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_13926-3277-4879",
+            "ibmcld_06897-4489-6531",
+            "ibmcld_14847-6338-8482",
+            "ibmcld_13145-24975-26773",
+            "ibmcld_05408-1500-3386"
+          ],
+          "after_ranking": [
+            "ibmcld_13926-3277-4879",
+            "ibmcld_06897-4489-6531",
+            "ibmcld_14847-6338-8482",
+            "ibmcld_13145-24975-26773",
+            "ibmcld_05408-1500-3386"
+          ]
+        },
+        {
+          "task_id": "f5b5b43a9e9534844cc2580c9fafc1d9<::>9",
+          "before_recall": 0.6666666666666666,
+          "after_recall": 0.6666666666666666,
+          "recall_delta": 0.0,
+          "before_hit": true,
+          "after_hit": true,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_07578-969419-971359",
+            "ibmcld_07578-873193-875161",
+            "ibmcld_16727-873070-875038",
+            "ibmcld_15034-6870-7844",
+            "ibmcld_07578-874737-876784"
+          ],
+          "after_ranking": [
+            "ibmcld_07578-873193-875161",
+            "ibmcld_07578-969419-971359",
+            "ibmcld_16727-873070-875038",
+            "ibmcld_15034-6870-7844",
+            "ibmcld_07578-874737-876784"
+          ]
+        },
+        {
+          "task_id": "f7a45e7c9f600609afea72e1a336575f<::>3",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_02841-1435-2454",
+            "ibmcld_03313-4560-6553",
+            "ibmcld_03329-1102-2607",
+            "ibmcld_07578-4297-6315",
+            "ibmcld_16727-4297-6315"
+          ],
+          "after_ranking": [
+            "ibmcld_02841-1435-2454",
+            "ibmcld_03329-1102-2607",
+            "ibmcld_03313-4560-6553",
+            "ibmcld_07578-4297-6315",
+            "ibmcld_03049-2703-4536"
+          ]
+        },
+        {
+          "task_id": "f7e9bcf0e500e434de1c834408351a43<::>2",
+          "before_recall": 0.0,
+          "after_recall": 0.0,
+          "recall_delta": 0.0,
+          "before_hit": false,
+          "after_hit": false,
+          "state": "completed",
+          "before_ranking": [
+            "ibmcld_10906-36600-38520",
+            "ibmcld_00716-7-1852",
+            "ibmcld_11163-12484-14433",
+            "ibmcld_03403-2780-4346",
+            "ibmcld_02110-10328-11354"
+          ],
+          "after_ranking": [
+            "ibmcld_00716-7-1852",
+            "ibmcld_10906-36600-38520",
+            "ibmcld_11163-12484-14433",
+            "ibmcld_03403-2780-4346",
+            "ibmcld_02110-10328-11354"
+          ]
+        }
+      ]
+    },
+    "historical_source_fingerprints": {
+      "evaluation/retrieval_v2_regression.py": "2f290e9867cc98ef9da6dd4cc3d0a93973274649a84fbcdbcd38a62039cdefb2",
+      "evaluation/retrieval_v2.py": "602e5cba45fe54b190e73a9c27743bd0330f5c36314fa57b3f4522070a511bc9",
+      "evaluation/public_data.py": "bde3e163efc7229b58ccf5b28d495d6be2efe11be07c7c1d67992bbff8301e18",
+      "evaluation/public_retrieval.py": "96a0036baa628c1f831a629331cd25a1c0d81d6b2545c147d2587bd2682348bc",
+      "app/public_search.py": "2180bf75072a7b54f30d19cd3a7bc53fb8938ebbc4d69f70ea484732c4e52c63",
+      "app/hybrid_models.py": "48f69c5cb7a6be84928cf76c6b3a5bb5d44496974ffb80f37df63a45e55f3e22"
+    }
+  },
+  "deployment": {
+    "new_retrieval_enabled_live": false,
+    "note": "本轮新增检索流程在评测实现中运行，未替换当前本地服务默认检索配置。"
+  },
+  "limitations": [
+    "Summaries are exported from preserved local run artifacts; private operational databases, full message logs, credentials and model weights are not distributed.",
+    "Source defaults for output and lock paths were made repository-relative for publication after the measurements; historical snapshots and measurements were not rerun or rewritten.",
+    "TSR normalization only repairs two registered JSON-format defects, without changing semantic verdicts. The 1 budget-interrupted task remains in the denominator.",
+    "Retrieval is a seen Cloud-only subset. The additional gain over previous rerank is 0.8759 percentage points and its 95% interval includes zero."
+  ]
+}
