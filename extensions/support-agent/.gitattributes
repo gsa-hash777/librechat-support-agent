@@ -1,0 +1,5 @@
+# Historical evaluation manifests hash exact bytes. Preserve the original
+# fixtures on both Windows and Linux instead of rewriting their line endings.
+data/** -text
+evaluation/*.json -text
+evaluation/frozen_v31/** -text
