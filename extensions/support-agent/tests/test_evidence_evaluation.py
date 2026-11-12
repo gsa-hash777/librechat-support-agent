@@ -64,6 +64,33 @@ def test_old_36_labels_are_preserved_as_seen_regression():
     assert next(row for row in rows if row['id']=='HD10')['kind']=='exact_missing'
 
 
+@pytest.mark.parametrize('name', ['data/source.txt', r'data\source.txt'])
+def test_frozen_source_paths_are_portable_and_still_checked(tmp_path, monkeypatch, name):
+    source = tmp_path / 'data/source.txt'
+    source.parent.mkdir()
+    source.write_bytes(b'unchanged frozen evidence\r\n')
+    monkeypatch.setattr(run, 'SERVICE', tmp_path)
+    data = {'schema_version': 1, 'frozen_before_comparison': True, 'cases': [],
+            'source_sha256': {name: run.evidence.digest(source)}}
+    assert run.validate_cases(data, {}) == []
+    source.write_bytes(b'tampered evidence\n')
+    with pytest.raises(ValueError, match='source changed'):
+        run.validate_cases(data, {})
+
+
+@pytest.mark.parametrize('name', ['../outside.txt', r'..\outside.txt'])
+def test_frozen_source_paths_cannot_escape_service(tmp_path, monkeypatch, name):
+    service = tmp_path / 'service'
+    service.mkdir()
+    outside = tmp_path / 'outside.txt'
+    outside.write_bytes(b'outside the permitted corpus')
+    monkeypatch.setattr(run, 'SERVICE', service)
+    data = {'schema_version': 1, 'frozen_before_comparison': True, 'cases': [],
+            'source_sha256': {name: run.evidence.digest(outside)}}
+    with pytest.raises(ValueError, match='source changed'):
+        run.validate_cases(data, {})
+
+
 def test_invented_reference_or_duplicate_id_rejected():
     row=case()
     data={'schema_version':1,'frozen_before_comparison':True,'cases':[row]}

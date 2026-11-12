@@ -84,7 +84,8 @@ def validate_cases(data, corpus):
     if data.get('schema_version') != 1 or not data.get('frozen_before_comparison'):
         raise ValueError('Expected a pre-frozen evidence-policy dataset.')
     for name,fingerprint in data.get('source_sha256',{}).items():
-        path = (SERVICE/name).resolve()
+        # Frozen Windows manifests retain their bytes; normalize only lookup.
+        path = (SERVICE/name.replace('\\', '/')).resolve()
         if not path.is_relative_to(SERVICE.resolve()) or evidence.digest(path) != fingerprint:
             raise ValueError('A source changed after case authoring was frozen.')
     seen = set()
